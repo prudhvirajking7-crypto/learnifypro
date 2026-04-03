@@ -73,6 +73,15 @@ export default function EnrollButton({ course, session }: EnrollButtonProps) {
     }
   };
 
+  const loadRazorpayScript = (): Promise<void> =>
+    new Promise((resolve) => {
+      if ((window as any).Razorpay) { resolve(); return; }
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve();
+      document.body.appendChild(script);
+    });
+
   const handleRazorpayCheckout = async () => {
     setLoadingRazorpay(true);
     try {
@@ -82,41 +91,48 @@ export default function EnrollButton({ course, session }: EnrollButtonProps) {
         body: JSON.stringify({ courseIds: [course.id] }),
       });
       const data = await res.json();
-      if (!res.ok) { toast.error(data.error || "Payment initialization failed"); return; }
+      if (!res.ok) { toast.error(data.error || "Payment initialization failed"); setLoadingRazorpay(false); return; }
 
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/checkout.js";
-      script.onload = () => {
-        const rzp = new (window as any).Razorpay({
-          key: data.key,
-          amount: data.amount,
-          currency: data.currency,
-          name: "LearnifyPro",
-          description: course.title,
-          order_id: data.orderId,
-          handler: async (response: any) => {
-            const verifyRes = await fetch("/api/payment/razorpay-verify", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(response),
-            });
-            const verifyData = await verifyRes.json();
-            if (verifyRes.ok) {
-              toast.success("Payment successful!");
-              router.push("/dashboard/my-learning");
-            } else {
-              toast.error(verifyData.error || "Payment verification failed");
-            }
+      await loadRazorpayScript();
+
+      const rzp = new (window as any).Razorpay({
+        key: data.key,
+        amount: data.amount,
+        currency: data.currency,
+        name: "LearnifyPro",
+        description: course.title,
+        order_id: data.orderId,
+        handler: async (response: any) => {
+          const verifyRes = await fetch("/api/payment/razorpay-verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response),
+          });
+          const verifyData = await verifyRes.json();
+          if (verifyRes.ok) {
+            toast.success("Payment successful!");
+            router.push("/dashboard/my-learning");
+          } else {
+            toast.error(verifyData.error || "Payment verification failed");
+            setLoadingRazorpay(false);
+          }
+        },
+        prefill: {
+          name: session?.user?.name || "",
+          email: session?.user?.email || "",
+        },
+        theme: { color: "#7c3aed" },
+        modal: {
+          ondismiss: () => {
+            setLoadingRazorpay(false);
+            toast.error("Payment cancelled");
           },
-          prefill: { name: session?.user?.name, email: session?.user?.email },
-          theme: { color: "#7c3aed" },
-        });
-        rzp.open();
-      };
-      document.body.appendChild(script);
+        },
+      });
+      setLoadingRazorpay(false);
+      rzp.open();
     } catch {
       toast.error("Payment failed");
-    } finally {
       setLoadingRazorpay(false);
     }
   };
