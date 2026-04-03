@@ -74,11 +74,14 @@ export async function GET(req: NextRequest) {
       prisma.course.count({ where }),
     ]);
 
-    const coursesWithRating = courses.map((course) => ({
+    const coursesWithRating = courses.map((course: (typeof courses)[number]) => ({
       ...course,
       averageRating:
         course.reviews.length > 0
-          ? course.reviews.reduce((sum, r) => sum + r.rating, 0) /
+          ? course.reviews.reduce(
+              (sum: number, review: { rating: number }) => sum + review.rating,
+              0
+            ) /
             course.reviews.length
           : 0,
       reviews: undefined,
