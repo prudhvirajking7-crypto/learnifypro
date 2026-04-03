@@ -4,6 +4,7 @@ import "./globals.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import SessionProvider from "@/components/providers/session-provider";
+import ConditionalLayout from "@/components/providers/conditional-layout";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import { Toaster } from "react-hot-toast";
@@ -28,9 +29,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <Navbar />
+          <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
           {children}
-          <Footer />
+          </ConditionalLayout>
           <Toaster
             position="top-right"
             toastOptions={{
