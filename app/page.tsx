@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { Star, ChevronRight, Zap, Award, Play, GraduationCap, BookOpen, Users, Globe } from "lucide-react";
+import { ChevronRight, Zap, Award, Play, GraduationCap, BookOpen } from "lucide-react";
 
 async function getFeaturedCourses() {
   try {
@@ -62,51 +62,13 @@ export default async function HomePage() {
             Start, switch, or advance your career with 1,000+ courses taught by real-world experts. Learn at your own pace, on any device.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center mb-12">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/courses" className="px-8 py-4 bg-white text-purple-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl shadow-purple-900/30 flex items-center gap-2">
               Explore Courses <ChevronRight className="w-5 h-5" />
             </Link>
             <Link href="/register" className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all">
               Start for Free
             </Link>
-          </div>
-
-          {/* Social proof */}
-          <div className="flex items-center justify-center gap-6">
-            <div className="flex -space-x-3">
-              {["A", "B", "C", "D"].map((l, i) => (
-                <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-400 border-2 border-purple-900 flex items-center justify-center text-white text-xs font-bold">{l}</div>
-              ))}
-            </div>
-            <div className="text-left">
-              <div className="flex items-center gap-1 mb-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
-                <span className="text-white font-semibold ml-1">4.8</span>
-              </div>
-              <p className="text-gray-400 text-sm">Trusted by 10M+ learners</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Stats bar ────────────────────────────────────────────── */}
-      <section className="bg-purple-700 py-5">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: Users, value: "10M+", label: "Students" },
-              { icon: BookOpen, value: "1,000+", label: "Courses" },
-              { icon: Award, value: "500+", label: "Expert Instructors" },
-              { icon: Globe, value: "190+", label: "Countries" },
-            ].map(({ icon: Icon, value, label }) => (
-              <div key={label} className="flex items-center gap-3 text-white justify-center">
-                <Icon className="w-5 h-5 text-purple-200 shrink-0" />
-                <div>
-                  <div className="font-bold text-lg leading-none">{value}</div>
-                  <div className="text-purple-200 text-xs mt-0.5">{label}</div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
