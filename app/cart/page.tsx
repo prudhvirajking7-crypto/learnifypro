@@ -46,6 +46,7 @@ export default function CartPage() {
         body: JSON.stringify({ courseIds }),
       });
       const data = await res.json();
+      if (!res.ok) { toast.error(data.error || "Checkout failed"); return; }
       if (data.url) window.location.href = data.url;
       else toast.error("Checkout failed");
     } catch { toast.error("Checkout failed"); } finally { setCheckoutLoading(null); }
@@ -60,6 +61,7 @@ export default function CartPage() {
         body: JSON.stringify({ courseIds }),
       });
       const data = await res.json();
+      if (!res.ok) { toast.error(data.error || "Payment initialization failed"); return; }
 
       const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/checkout.js";

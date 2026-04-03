@@ -120,7 +120,6 @@ async function main() {
 <li>Includes lifetime access and certificate</li>
 </ul>`,
       shortDescription: "Become a full-stack web developer. Learn HTML, CSS, JavaScript, React, Node.js, MongoDB, and more!",
-      thumbnail: "https://img-c.udemyassets.com/course/480x270/625204_436a_3.jpg",
       price: 3999,
       discountPrice: 499,
       currency: "INR",
@@ -153,7 +152,6 @@ async function main() {
       description: `<p>Learn Python for Data Science, NumPy, Pandas, Matplotlib, Seaborn, Plotly, Scikit-Learn, Machine Learning, Tensorflow, and more!</p>
 <p>This course covers everything from Python basics to advanced machine learning algorithms.</p>`,
       shortDescription: "Learn Python, Pandas, NumPy, Matplotlib, Scikit-Learn, Machine Learning and Deep Learning!",
-      thumbnail: "https://img-c.udemyassets.com/course/480x270/903744_8eb2.jpg",
       price: 4499,
       discountPrice: 649,
       currency: "INR",
@@ -186,7 +184,6 @@ async function main() {
       description: `<p>Master UI/UX design from scratch. Learn Figma, design principles, user research, wireframing, prototyping, and more.</p>
 <p>This course takes you from zero to a professional UI/UX designer with a complete portfolio.</p>`,
       shortDescription: "Master UI/UX Design with Figma. Create stunning designs, build your portfolio and land your dream design job!",
-      thumbnail: "https://img-c.udemyassets.com/course/480x270/1643044_f4fc_2.jpg",
       price: 3499,
       discountPrice: 549,
       currency: "INR",

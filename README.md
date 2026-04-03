@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LearnifyPro — Full-Stack E-Learning Platform
+
+A production-grade Udemy-like e-learning platform built with Next.js 14, PostgreSQL, Stripe, and Razorpay.
+
+🌐 **Live:** [techprowexa.com](https://techprowexa.com)
+
+---
+
+## Features
+
+- **Authentication** — Google OAuth, Email/Password login, Email OTP verification on signup
+- **Course Catalog** — Browse, search, filter by category, level, price; course detail pages with curriculum accordion
+- **Video Player** — Custom controls, progress tracking, auto-marks lecture complete at 90%
+- **Dual Payments** — Razorpay (UPI / Indian cards) + Stripe (international cards)
+- **Dashboard** — Enrolled courses, progress tracking, order history
+- **Role System** — Student, Instructor, Admin roles with middleware-protected routes
+- **Responsive UI** — Tailwind CSS with custom animations, works on all devices
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 14 (App Router), React 18, Tailwind CSS |
+| Backend | Next.js API Routes (Node.js) |
+| Database | PostgreSQL (Neon) + Prisma ORM |
+| Auth | NextAuth.js v4 — Google OAuth + Credentials |
+| Email | Nodemailer (SMTP) |
+| Payments | Stripe Checkout + Razorpay Orders API |
+| Deployment | cPanel Shared Hosting (standalone Node.js) |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/prudhvirajking7/learnifypro.git
+cd learnifypro
+npm install
+```
+
+### 2. Configure Environment Variables
+
+Copy `.env.example` to `.env.local` and fill in all values:
+
+```bash
+cp .env.example .env.local
+```
+
+Required variables:
+
+```env
+DATABASE_URL=postgresql://user:pass@host/dbname
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=<generate: openssl rand -base64 32>
+
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your@email.com
+SMTP_PASS=your-app-password
+SMTP_FROM=LearnifyPro <your@email.com>
+
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_STRIPE_KEY=pk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+RAZORPAY_KEY_ID=rzp_test_...
+RAZORPAY_KEY_SECRET=your-secret
+NEXT_PUBLIC_RAZORPAY_KEY_ID=rzp_test_...
+```
+
+### 3. Set Up Database
+
+```bash
+npx prisma db push
+npm run db:seed
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Default Seeded Credentials
 
-## Learn More
+| Role | Email | Password |
+|---|---|---|
+| Admin | admin@learnifypro.com | Admin@123 |
+| Instructor | john.smith@learnifypro.com | Instructor@123 |
 
-To learn more about Next.js, take a look at the following resources:
+> **Change these immediately after first login in production!**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Available Scripts
 
-## Deploy on Vercel
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run db:push      # Push Prisma schema to DB
+npm run db:seed      # Seed sample data
+npm run db:studio    # Open Prisma Studio (DB GUI)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+├── app/
+│   ├── (auth)/          # Login, Register, Verify OTP pages
+│   ├── api/             # API routes (auth, courses, cart, payment)
+│   ├── cart/            # Shopping cart page
+│   ├── checkout/        # Checkout success page
+│   ├── courses/         # Course catalog & detail pages
+│   │   └── [slug]/learn # Video player / learning page
+│   └── dashboard/       # Student dashboard
+├── components/
+│   ├── courses/         # CourseCard, CourseFilters, EnrollButton, VideoPlayer
+│   └── layout/          # Navbar, Footer
+├── lib/                 # Prisma, Auth, Stripe, Razorpay, Email utilities
+├── prisma/
+│   ├── schema.prisma    # Database schema
+│   └── seed.ts          # Sample data seeder
+└── middleware.ts         # Route protection
+```
+
+---
+
+## Deployment (cPanel)
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for the full step-by-step cPanel deployment guide.
+
+Key steps:
+1. `npm run build` generates `.next/standalone/`
+2. Upload standalone folder to cPanel
+3. Set all environment variables in cPanel Node.js App
+4. Set startup file to `server.js`
+5. Configure `.htaccess` to proxy requests to Node.js
+
+---
+
+## Payment Testing
+
+**Stripe test card:**
+```
+Card: 4242 4242 4242 4242
+Expiry: Any future date | CVC: Any 3 digits
+```
+
+**Razorpay test:**
+Use test mode keys from dashboard.razorpay.com with any test UPI/card credentials.
+
+---
+
+## License
+
+MIT — feel free to use this project as a template for your own e-learning platform.

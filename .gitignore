@@ -37,3 +37,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code AI assistant folders
+.claude/
+*.claude
+
+# Deployment artifacts
+*.zip
+*.tar.gz
+learnifypro-deploy*
+
+# Prisma temporary seed scripts
+prisma/seed-more-courses.ts
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/

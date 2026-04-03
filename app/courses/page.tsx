@@ -1,21 +1,63 @@
 import CourseCard from "@/components/courses/course-card";
 import CourseFilters from "@/components/courses/course-filters";
 import { Search } from "lucide-react";
+import { prisma } from "@/lib/prisma";
 
 async function getCourses(searchParams: any) {
-  const params = new URLSearchParams();
-  if (searchParams.search) params.set("search", searchParams.search);
-  if (searchParams.category) params.set("category", searchParams.category);
-  if (searchParams.level) params.set("level", searchParams.level);
-  if (searchParams.sortBy) params.set("sortBy", searchParams.sortBy);
-  params.set("page", searchParams.page || "1");
-  params.set("limit", "12");
-  
+  const page = Number(searchParams.page) || 1;
+  const limit = 12;
+  const skip = (page - 1) * limit;
+  const search = searchParams.search;
+  const category = searchParams.category;
+  const level = searchParams.level;
+  const sortBy = searchParams.sortBy || "createdAt";
+
+  const where: any = { status: "PUBLISHED" };
+  if (category) where.category = { slug: category };
+  if (level) where.level = level;
+  if (search) {
+    where.OR = [
+      { title: { contains: search, mode: "insensitive" } },
+      { shortDescription: { contains: search, mode: "insensitive" } },
+      { tags: { has: search } },
+    ];
+  }
+
+  const orderBy: any =
+    sortBy === "price" ? { price: "asc" } :
+    sortBy === "rating" ? { reviews: { _count: "desc" } } :
+    sortBy === "popular" ? { enrollments: { _count: "desc" } } :
+    { createdAt: "desc" };
+
   try {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/courses?${params}`, { next: { revalidate: 60 } });
-    if (!res.ok) return { courses: [], pagination: null };
-    return res.json();
-  } catch { return { courses: [], pagination: null }; }
+    const [rawCourses, total] = await Promise.all([
+      prisma.course.findMany({
+        where, skip, take: limit, orderBy,
+        select: {
+          id: true, title: true, slug: true, shortDescription: true,
+          thumbnail: true, price: true, discountPrice: true, currency: true,
+          level: true, language: true, totalDuration: true, totalLectures: true,
+          featured: true,
+          instructor: { select: { id: true, name: true, image: true } },
+          category: { select: { name: true, slug: true } },
+          _count: { select: { enrollments: true, reviews: true } },
+          reviews: { select: { rating: true } },
+        },
+      }),
+      prisma.course.count({ where }),
+    ]);
+
+    const courses = rawCourses.map((c) => ({
+      ...c,
+      averageRating: c.reviews.length > 0
+        ? c.reviews.reduce((sum, r) => sum + r.rating, 0) / c.reviews.length : 0,
+      reviews: undefined,
+    }));
+
+    return { courses, pagination: { total, page, limit, totalPages: Math.ceil(total / limit) } };
+  } catch {
+    return { courses: [], pagination: null };
+  }
 }
 
 export default async function CoursesPage({ searchParams }: { searchParams: any }) {
