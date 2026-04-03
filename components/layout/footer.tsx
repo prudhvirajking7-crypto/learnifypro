@@ -26,7 +26,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
-              World-class learning for anyone, anywhere. Join millions of learners and instructors today.
+              World-class learning for anyone, anywhere. Expert-led courses built around real projects and career outcomes.
             </p>
             <div className="flex items-center gap-3">
               {SocialIcons.map(({ label, svg }, i) => (
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm">© 2024 LearnifyPro. All rights reserved.</p>
+          <p className="text-sm">© 2025 LearnifyPro. All rights reserved.</p>
           <div className="flex items-center gap-2 text-sm">
             <span>🌍</span>
             <span>English</span>

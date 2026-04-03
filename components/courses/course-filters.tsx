@@ -47,18 +47,24 @@ export default function CourseFilters() {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 p-5">
       <div className="flex items-center justify-between mb-5">
-        <div className="flex items-center gap-2 font-semibold text-gray-900">
+        <button
+          className="flex items-center gap-2 font-semibold text-gray-900 lg:cursor-default w-full"
+          onClick={() => setIsOpen((v) => !v)}
+        >
           <Filter className="w-4 h-4 text-purple-600" />
           Filters
-        </div>
+          <span className="ml-auto lg:hidden text-purple-600 text-xs font-medium">
+            {isOpen ? "Hide" : "Show"}
+          </span>
+        </button>
         {hasFilters && (
-          <button onClick={clearAll} className="flex items-center gap-1 text-xs text-red-500 hover:text-red-600">
+          <button onClick={clearAll} className="flex items-center gap-1 text-xs text-red-500 hover:text-red-600 shrink-0 ml-2">
             <X className="w-3 h-3" /> Clear all
           </button>
         )}
       </div>
 
-      <div className="space-y-6">
+      <div className={`space-y-6 lg:block ${isOpen ? "block" : "hidden"}`}>
         {/* Sort */}
         <div>
           <h4 className="text-sm font-semibold text-gray-700 mb-3">Sort By</h4>
