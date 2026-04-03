@@ -76,7 +76,7 @@ export default async function CourseLearnPage({
               <span className="text-sm text-gray-500">{progressPercent}% complete</span>
             </div>
             <div className="h-1.5 bg-gray-100 rounded-full mb-4">
-              <div className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full transition-all" style={{ width: `${progressPercent}%` }} />
+              <div className="h-full bg-gradient-to-r from-amber-500 to-amber-500 rounded-full transition-all" style={{ width: `${progressPercent}%` }} />
             </div>
             {currentLecture?.description && (
               <p className="text-gray-600 text-sm leading-relaxed">{currentLecture.description}</p>
@@ -108,15 +108,15 @@ export default async function CourseLearnPage({
                   key={lecture.id}
                   href={`?lecture=${lecture.id}`}
                   className={`flex items-center gap-3 px-4 py-3 text-xs transition-colors ${
-                    isCurrent ? "bg-purple-50 border-l-4 border-purple-600" : "hover:bg-gray-50"
+                    isCurrent ? "bg-amber-50 border-l-4 border-amber-600" : "hover:bg-gray-50"
                   }`}
                 >
                   {isCompleted ? (
                     <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
                   ) : (
-                    <div className={`w-4 h-4 rounded-full border-2 shrink-0 ${isCurrent ? "border-purple-600" : "border-gray-300"}`} />
+                    <div className={`w-4 h-4 rounded-full border-2 shrink-0 ${isCurrent ? "border-amber-600" : "border-gray-300"}`} />
                   )}
-                  <span className={`flex-1 ${isCurrent ? "font-medium text-purple-700" : "text-gray-600"}`}>{lecture.title}</span>
+                  <span className={`flex-1 ${isCurrent ? "font-medium text-amber-700" : "text-gray-600"}`}>{lecture.title}</span>
                   <span className="text-gray-400 shrink-0">{formatDuration(lecture.duration)}</span>
                 </a>
               );

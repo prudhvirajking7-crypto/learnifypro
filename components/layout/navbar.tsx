@@ -73,17 +73,17 @@ export default function Navbar() {
         <div className="flex items-center h-16 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-lg flex items-center justify-center">
               <GraduationCap className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-xl text-gray-900 hidden sm:block">
-              Learnify<span className="text-purple-600">Pro</span>
+              Learnify<span className="text-amber-600">Pro</span>
             </span>
           </Link>
 
           {/* Categories dropdown */}
           <div className="relative hidden lg:block group">
-            <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-purple-600 py-2">
+            <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-amber-600 py-2">
               Categories <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -91,7 +91,7 @@ export default function Navbar() {
                 <Link
                   key={cat}
                   href={`/courses?category=${encodeURIComponent(cat.toLowerCase().replace(/\s+/g, "-"))}`}
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 first:rounded-t-xl last:rounded-b-xl transition-colors"
+                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 first:rounded-t-xl last:rounded-b-xl transition-colors"
                 >
                   {cat}
                 </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for courses..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-sm transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 text-sm transition-all"
               />
             </div>
           </form>
@@ -118,11 +118,11 @@ export default function Navbar() {
             {session && (
               <Link
                 href="/cart"
-                className="relative p-2 text-gray-600 hover:text-purple-600 transition-colors"
+                className="relative p-2 text-gray-600 hover:text-amber-600 transition-colors"
               >
                 <ShoppingCart className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-purple-600 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-amber-600 text-white text-xs rounded-full flex items-center justify-center font-medium">
                     {cartCount}
                   </span>
                 )}
@@ -139,10 +139,10 @@ export default function Navbar() {
                     <img
                       src={session.user.image}
                       alt={session.user.name || "User"}
-                      className="w-9 h-9 rounded-full object-cover border-2 border-purple-200"
+                      className="w-9 h-9 rounded-full object-cover border-2 border-amber-200"
                     />
                   ) : (
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-white font-semibold text-sm">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center text-white font-semibold text-sm">
                       {getInitials(session.user?.name || session.user?.email || "U")}
                     </div>
                   )}
@@ -158,21 +158,21 @@ export default function Navbar() {
                     </div>
                     <Link
                       href="/dashboard"
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
                       onClick={() => setIsProfileOpen(false)}
                     >
                       <LayoutDashboard className="w-4 h-4" /> Dashboard
                     </Link>
                     <Link
                       href="/dashboard/my-learning"
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
                       onClick={() => setIsProfileOpen(false)}
                     >
                       <BookOpen className="w-4 h-4" /> My Learning
                     </Link>
                     <Link
                       href="/profile"
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
                       onClick={() => setIsProfileOpen(false)}
                     >
                       <User className="w-4 h-4" /> Profile
@@ -191,13 +191,13 @@ export default function Navbar() {
               <div className="flex items-center gap-2">
                 <Link
                   href="/login"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors"
                 >
                   Log In
                 </Link>
                 <Link
                   href="/register"
-                  className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all shadow-sm"
+                  className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-amber-600 to-yellow-700 rounded-lg hover:from-amber-700 hover:to-yellow-800 transition-all shadow-sm"
                 >
                   Sign Up
                 </Link>
@@ -225,19 +225,19 @@ export default function Navbar() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search courses..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 focus:outline-none focus:border-purple-500 text-sm"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 focus:outline-none focus:border-amber-500 text-sm"
                 />
               </div>
             </form>
             <div className="space-y-1">
-              <Link href="/courses" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/courses" className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 rounded-lg" onClick={() => setIsMenuOpen(false)}>
                 All Courses
               </Link>
               {categories.map((cat) => (
                 <Link
                   key={cat}
                   href={`/courses?category=${encodeURIComponent(cat.toLowerCase().replace(/\s+/g, "-"))}`}
-                  className="block px-4 py-2 text-sm text-gray-600 hover:bg-purple-50 rounded-lg"
+                  className="block px-4 py-2 text-sm text-gray-600 hover:bg-amber-50 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {cat}

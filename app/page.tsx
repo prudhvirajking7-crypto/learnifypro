@@ -42,20 +42,20 @@ export default async function HomePage() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-amber-950 to-stone-900 pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-        <div className="absolute top-20 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+        <div className="absolute top-20 right-20 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-purple-200 text-sm px-4 py-2 rounded-full mb-6 border border-white/20">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-amber-200 text-sm px-4 py-2 rounded-full mb-6 border border-white/20">
             <Zap className="w-4 h-4 text-yellow-400" />
             <span>Learn from industry professionals — with real projects</span>
           </div>
 
           <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Learn Without
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Limits</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400"> Limits</span>
           </h1>
 
           <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
@@ -63,10 +63,10 @@ export default async function HomePage() {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/courses" className="px-8 py-4 bg-white text-purple-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl shadow-purple-900/30 flex items-center gap-2">
+            <Link href="/courses" className="px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl shadow-amber-950/30 flex items-center gap-2">
               Explore Courses <ChevronRight className="w-5 h-5" />
             </Link>
-            <Link href="/register" className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all">
+            <Link href="/register" className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all">
               Start for Free
             </Link>
           </div>
@@ -82,25 +82,25 @@ export default async function HomePage() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured Courses</h2>
                 <p className="text-gray-500">Hand-picked by our team — start learning today.</p>
               </div>
-              <Link href="/courses" className="text-purple-600 font-semibold hover:underline flex items-center gap-1 text-sm">
+              <Link href="/courses" className="text-amber-600 font-semibold hover:underline flex items-center gap-1 text-sm">
                 View all <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {featured.map((course) => (
                 <Link key={course.id} href={`/courses/${course.slug}`} className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="h-44 bg-gradient-to-br from-purple-100 to-indigo-100 overflow-hidden">
+                  <div className="h-44 bg-gradient-to-br from-amber-100 to-yellow-100 overflow-hidden">
                     {course.thumbnail ? (
                       <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <BookOpen className="w-12 h-12 text-purple-300" />
+                        <BookOpen className="w-12 h-12 text-amber-300" />
                       </div>
                     )}
                   </div>
                   <div className="p-5">
-                    <span className="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded-full">{course.level.replace("_", " ")}</span>
-                    <h3 className="font-bold text-gray-900 mt-3 mb-1 line-clamp-2 group-hover:text-purple-600 transition-colors">{course.title}</h3>
+                    <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-full">{course.level.replace("_", " ")}</span>
+                    <h3 className="font-bold text-gray-900 mt-3 mb-1 line-clamp-2 group-hover:text-amber-600 transition-colors">{course.title}</h3>
                     <p className="text-gray-500 text-sm line-clamp-2 mb-4">{course.shortDescription}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-500">by {course.instructor.name}</span>
@@ -127,7 +127,7 @@ export default async function HomePage() {
             {CATEGORIES.map((cat) => (
               <Link key={cat.slug} href={`/courses?category=${cat.slug}`} className="group bg-white rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100">
                 <div className="text-4xl mb-3">{cat.icon}</div>
-                <h3 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors text-sm">{cat.name}</h3>
+                <h3 className="font-semibold text-gray-900 group-hover:text-amber-600 transition-colors text-sm">{cat.name}</h3>
               </Link>
             ))}
           </div>
@@ -144,8 +144,8 @@ export default async function HomePage() {
           <div className="grid sm:grid-cols-2 gap-8">
             {WHY_US.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
-                  <Icon className="w-6 h-6 text-purple-600" />
+                <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                  <Icon className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">{title}</h3>
@@ -158,12 +158,12 @@ export default async function HomePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section className="py-20 bg-gradient-to-r from-purple-700 to-indigo-700">
+      <section className="py-20 bg-gradient-to-r from-amber-700 to-yellow-800">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to start building your career?</h2>
-          <p className="text-purple-200 text-lg mb-10">Join learners who are gaining real skills from industry experts — and landing jobs to prove it.</p>
+          <p className="text-amber-200 text-lg mb-10">Join learners who are gaining real skills from industry experts — and landing jobs to prove it.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/register" className="px-8 py-4 bg-white text-purple-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl">
+            <Link href="/register" className="px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl">
               Get Started for Free
             </Link>
             <Link href="/courses" className="px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all">

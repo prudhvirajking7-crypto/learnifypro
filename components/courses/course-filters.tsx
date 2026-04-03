@@ -51,9 +51,9 @@ export default function CourseFilters() {
           className="flex items-center gap-2 font-semibold text-gray-900 lg:cursor-default w-full"
           onClick={() => setIsOpen((v) => !v)}
         >
-          <Filter className="w-4 h-4 text-purple-600" />
+          <Filter className="w-4 h-4 text-amber-600" />
           Filters
-          <span className="ml-auto lg:hidden text-purple-600 text-xs font-medium">
+          <span className="ml-auto lg:hidden text-amber-600 text-xs font-medium">
             {isOpen ? "Hide" : "Show"}
           </span>
         </button>
@@ -77,7 +77,7 @@ export default function CourseFilters() {
                   value={opt.value}
                   checked={searchParams.get("sortBy") === opt.value}
                   onChange={() => updateFilter("sortBy", opt.value)}
-                  className="text-purple-600"
+                  className="text-amber-600"
                 />
                 <span className="text-sm text-gray-600">{opt.label}</span>
               </label>
@@ -95,7 +95,7 @@ export default function CourseFilters() {
                   type="checkbox"
                   checked={searchParams.get("level") === level.value}
                   onChange={(e) => updateFilter("level", e.target.checked ? level.value : null)}
-                  className="text-purple-600 rounded"
+                  className="text-amber-600 rounded"
                 />
                 <span className="text-sm text-gray-600">{level.label}</span>
               </label>
@@ -113,7 +113,7 @@ export default function CourseFilters() {
                   type="checkbox"
                   checked={searchParams.get("category") === cat.value}
                   onChange={(e) => updateFilter("category", e.target.checked ? cat.value : null)}
-                  className="text-purple-600 rounded"
+                  className="text-amber-600 rounded"
                 />
                 <span className="text-sm text-gray-600">{cat.label}</span>
               </label>

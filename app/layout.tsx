@@ -43,7 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 padding: "12px 16px",
                 fontSize: "14px",
               },
-              success: { iconTheme: { primary: "#7c3aed", secondary: "#fff" } },
+              success: { iconTheme: { primary: "#d97706", secondary: "#fff" } },
             }}
           />
         </SessionProvider>

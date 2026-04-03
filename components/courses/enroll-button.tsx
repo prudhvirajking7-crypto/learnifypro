@@ -22,7 +22,7 @@ export default function EnrollButton({ course, session }: EnrollButtonProps) {
     return (
       <button
         onClick={() => router.push(`/login?callbackUrl=/courses/${course.slug}`)}
-        className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg"
+        className="w-full py-3.5 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-bold rounded-xl hover:from-amber-700 hover:to-yellow-800 transition-all shadow-lg"
       >
         Enroll Now
       </button>
@@ -165,7 +165,7 @@ export default function EnrollButton({ course, session }: EnrollButtonProps) {
       <button
         onClick={handleRazorpayCheckout}
         disabled={loadingRazorpay}
-        className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2"
+        className="w-full py-3.5 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-bold rounded-xl hover:from-amber-700 hover:to-yellow-800 transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2"
       >
         <Zap className="w-4 h-4" />
         {loadingRazorpay ? "Loading..." : "Buy Now (UPI / Cards)"}
@@ -173,7 +173,7 @@ export default function EnrollButton({ course, session }: EnrollButtonProps) {
       <button
         onClick={handleStripeCheckout}
         disabled={loadingStripe}
-        className="w-full py-3.5 bg-white border-2 border-purple-600 text-purple-600 font-bold rounded-xl hover:bg-purple-50 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+        className="w-full py-3.5 bg-white border-2 border-amber-600 text-amber-600 font-bold rounded-xl hover:bg-amber-50 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
       >
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h18v2H3zm0-4h18v2H3zm0 8h18v2H3z"/></svg>
         {loadingStripe ? "Loading..." : "Pay with Card (Stripe)"}

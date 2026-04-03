@@ -114,8 +114,8 @@ function OTPForm() {
 
   return (
     <>
-      <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-        <Mail className="w-8 h-8 text-purple-600" />
+      <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <Mail className="w-8 h-8 text-amber-600" />
       </div>
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Check your email</h2>
       <p className="text-gray-500 text-sm">
@@ -135,7 +135,7 @@ function OTPForm() {
             onChange={(e) => handleInput(i, e.target.value)}
             onKeyDown={(e) => handleKeyDown(i, e)}
             className={`w-12 h-14 text-center text-xl font-bold border-2 rounded-xl focus:outline-none transition-all ${
-              digit ? "border-purple-500 bg-purple-50 text-purple-700" : "border-gray-300 focus:border-purple-500"
+              digit ? "border-amber-500 bg-amber-50 text-amber-700" : "border-gray-300 focus:border-amber-500"
             } ${isLoading ? "opacity-50" : ""}`}
             disabled={isLoading}
           />
@@ -143,7 +143,7 @@ function OTPForm() {
       </div>
 
       {isLoading && (
-        <p className="text-sm text-purple-600 animate-pulse">Verifying...</p>
+        <p className="text-sm text-amber-600 animate-pulse">Verifying...</p>
       )}
 
       <div className="mt-6">
@@ -151,7 +151,7 @@ function OTPForm() {
         <button
           onClick={handleResend}
           disabled={resendCooldown > 0 || isResending}
-          className="flex items-center gap-2 mx-auto text-sm font-semibold text-purple-600 hover:text-purple-700 disabled:text-gray-400 disabled:cursor-not-allowed"
+          className="flex items-center gap-2 mx-auto text-sm font-semibold text-amber-600 hover:text-amber-700 disabled:text-gray-400 disabled:cursor-not-allowed"
         >
           <RefreshCw className={`w-4 h-4 ${isResending ? "animate-spin" : ""}`} />
           {resendCooldown > 0 ? `Resend in ${resendCooldown}s` : isResending ? "Sending..." : "Resend OTP"}
@@ -165,14 +165,14 @@ function OTPForm() {
 
 export default function VerifyOTPPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="font-bold text-2xl text-gray-900">Learnify<span className="text-purple-600">Pro</span></span>
+            <span className="font-bold text-2xl text-gray-900">Learnify<span className="text-amber-600">Pro</span></span>
           </Link>
         </div>
 

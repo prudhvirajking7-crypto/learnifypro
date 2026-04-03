@@ -18,11 +18,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-lg flex items-center justify-center">
                 <GraduationCap className="w-5 h-5 text-white" />
               </div>
               <span className="font-bold text-xl text-white">
-                Learnify<span className="text-purple-400">Pro</span>
+                Learnify<span className="text-amber-400">Pro</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
@@ -34,7 +34,7 @@ export default function Footer() {
                   key={i}
                   href="#"
                   aria-label={label}
-                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors"
+                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-colors"
                 >
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     {svg}
@@ -50,7 +50,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {["Web Development", "Data Science", "Design", "Business", "Marketing", "IT & Software"].map((item) => (
                 <li key={item}>
-                  <Link href={`/courses?category=${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-purple-400 transition-colors">
+                  <Link href={`/courses?category=${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-amber-400 transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -63,7 +63,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {["About Us", "Careers", "Blog", "Press", "Affiliate", "Investors"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="hover:text-purple-400 transition-colors">{item}</Link>
+                  <Link href="#" className="hover:text-amber-400 transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -74,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {["Help Center", "Contact Us", "Privacy Policy", "Terms of Service", "Cookie Policy", "Accessibility"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="hover:text-purple-400 transition-colors">{item}</Link>
+                  <Link href="#" className="hover:text-amber-400 transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>

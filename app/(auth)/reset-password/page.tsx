@@ -50,7 +50,7 @@ function ResetPasswordForm() {
     return (
       <div className="text-center py-8">
         <p className="text-gray-500 mb-4">Invalid reset link.</p>
-        <Link href="/forgot-password" className="text-purple-600 font-semibold hover:underline">Request a new code</Link>
+        <Link href="/forgot-password" className="text-amber-600 font-semibold hover:underline">Request a new code</Link>
       </div>
     );
   }
@@ -78,7 +78,7 @@ function ResetPasswordForm() {
           value={otp}
           onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
           placeholder="Enter 6-digit code"
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-sm text-center tracking-widest text-lg font-mono"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 text-sm text-center tracking-widest text-lg font-mono"
           maxLength={6}
           autoFocus
         />
@@ -93,7 +93,7 @@ function ResetPasswordForm() {
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             placeholder="Min 8 characters"
-            className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 text-sm"
+            className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 text-sm"
           />
           <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400">
             {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -110,7 +110,7 @@ function ResetPasswordForm() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Re-enter new password"
-            className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-100 text-sm ${
+            className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-100 text-sm ${
               confirmPassword && confirmPassword !== newPassword ? "border-red-300 bg-red-50" : "border-gray-300"
             }`}
           />
@@ -123,14 +123,14 @@ function ResetPasswordForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg shadow-purple-200 disabled:opacity-50"
+        className="w-full py-3 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-semibold rounded-xl hover:from-amber-700 hover:to-yellow-800 transition-all shadow-lg shadow-amber-200 disabled:opacity-50"
       >
         {loading ? "Resetting…" : "Reset Password"}
       </button>
 
       <p className="text-center text-sm text-gray-500">
         Didn't get the code?{" "}
-        <Link href="/forgot-password" className="text-purple-600 font-semibold hover:underline">Request again</Link>
+        <Link href="/forgot-password" className="text-amber-600 font-semibold hover:underline">Request again</Link>
       </p>
     </form>
   );
@@ -138,14 +138,14 @@ function ResetPasswordForm() {
 
 export default function ResetPasswordPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="font-bold text-2xl text-gray-900">Learnify<span className="text-purple-600">Pro</span></span>
+            <span className="font-bold text-2xl text-gray-900">Learnify<span className="text-amber-600">Pro</span></span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Set a new password</h1>
           <p className="text-gray-500 mt-1">Enter the code we sent you and choose a new password.</p>

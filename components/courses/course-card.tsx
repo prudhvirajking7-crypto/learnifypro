@@ -71,7 +71,7 @@ export default function CourseCard({ course, isEnrolled }: CourseCardProps) {
     <Link href={`/courses/${course.slug}`} className="group block">
       <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
         {/* Thumbnail */}
-        <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-indigo-100 overflow-hidden">
+        <div className="relative aspect-video bg-gradient-to-br from-amber-100 to-yellow-100 overflow-hidden">
           {course.thumbnail ? (
             <img
               src={course.thumbnail}
@@ -80,7 +80,7 @@ export default function CourseCard({ course, isEnrolled }: CourseCardProps) {
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
-              <BookOpen className="w-12 h-12 text-purple-300" />
+              <BookOpen className="w-12 h-12 text-amber-300" />
             </div>
           )}
           {discountPercent > 0 && (
@@ -118,7 +118,7 @@ export default function CourseCard({ course, isEnrolled }: CourseCardProps) {
             </div>
           </div>
 
-          <h3 className="font-semibold text-gray-900 text-sm leading-snug mb-1 line-clamp-2 group-hover:text-purple-600 transition-colors">
+          <h3 className="font-semibold text-gray-900 text-sm leading-snug mb-1 line-clamp-2 group-hover:text-amber-600 transition-colors">
             {course.title}
           </h3>
 
@@ -130,7 +130,7 @@ export default function CourseCard({ course, isEnrolled }: CourseCardProps) {
 
           <p className="text-xs text-gray-500 mb-3 mt-auto">
             by{" "}
-            <span className="text-purple-600 font-medium">
+            <span className="text-amber-600 font-medium">
               {course.instructor.name}
             </span>
           </p>
@@ -179,7 +179,7 @@ export default function CourseCard({ course, isEnrolled }: CourseCardProps) {
               <button
                 onClick={handleAddToCart}
                 disabled={addingToCart}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all disabled:opacity-50"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-amber-600 to-yellow-700 rounded-lg hover:from-amber-700 hover:to-yellow-800 transition-all disabled:opacity-50"
               >
                 <ShoppingCart className="w-3.5 h-3.5" />
                 {addingToCart ? "Adding..." : "Add to Cart"}

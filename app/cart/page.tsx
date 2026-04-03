@@ -112,7 +112,7 @@ export default function CartPage() {
 
   if (loading) return (
     <div className="min-h-screen pt-20 flex items-center justify-center">
-      <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin" />
+      <div className="w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full animate-spin" />
     </div>
   );
 
@@ -127,7 +127,7 @@ export default function CartPage() {
             <ShoppingCart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">Your cart is empty</h3>
             <p className="text-gray-500 mb-6">Add some courses to get started!</p>
-            <Link href="/courses" className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors">
+            <Link href="/courses" className="px-6 py-3 bg-amber-600 text-white font-semibold rounded-xl hover:bg-amber-700 transition-colors">
               Browse Courses
             </Link>
           </div>
@@ -136,17 +136,17 @@ export default function CartPage() {
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => (
                 <div key={item.id} className="bg-white rounded-2xl border border-gray-100 p-4 flex gap-4">
-                  <div className="w-24 h-16 rounded-xl bg-gradient-to-br from-purple-100 to-indigo-100 overflow-hidden shrink-0">
+                  <div className="w-24 h-16 rounded-xl bg-gradient-to-br from-amber-100 to-amber-100 overflow-hidden shrink-0">
                     {item.course.thumbnail ? (
                       <img src={item.course.thumbnail} alt={item.course.title} className="w-full h-full object-cover" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <BookOpen className="w-8 h-8 text-purple-300" />
+                        <BookOpen className="w-8 h-8 text-amber-300" />
                       </div>
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <Link href={`/courses/${item.courseId}`} className="font-semibold text-gray-900 text-sm hover:text-purple-600 line-clamp-2">{item.course.title}</Link>
+                    <Link href={`/courses/${item.courseId}`} className="font-semibold text-gray-900 text-sm hover:text-amber-600 line-clamp-2">{item.course.title}</Link>
                     <p className="text-xs text-gray-500 mt-0.5">By {item.course.instructor.name}</p>
                   </div>
                   <div className="text-right shrink-0">
@@ -177,7 +177,7 @@ export default function CartPage() {
                   <button
                     onClick={handleRazorpayCheckout}
                     disabled={!!checkoutLoading}
-                    className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="w-full py-3.5 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-bold rounded-xl hover:from-amber-700 hover:to-yellow-800 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                   >
                     {checkoutLoading === "razorpay" ? "Loading..." : "Checkout with UPI / Cards"}
                     {checkoutLoading !== "razorpay" && <ArrowRight className="w-4 h-4" />}
@@ -185,7 +185,7 @@ export default function CartPage() {
                   <button
                     onClick={handleStripeCheckout}
                     disabled={!!checkoutLoading}
-                    className="w-full py-3 border-2 border-purple-600 text-purple-600 font-bold rounded-xl hover:bg-purple-50 transition-all disabled:opacity-50"
+                    className="w-full py-3 border-2 border-amber-600 text-amber-600 font-bold rounded-xl hover:bg-amber-50 transition-all disabled:opacity-50"
                   >
                     {checkoutLoading === "stripe" ? "Loading..." : "Pay with Stripe"}
                   </button>

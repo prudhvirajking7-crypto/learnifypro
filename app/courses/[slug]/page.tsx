@@ -40,7 +40,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
             {course.category && (
-              <span className="text-purple-400 text-sm font-medium mb-3 block">{course.category.name}</span>
+              <span className="text-amber-400 text-sm font-medium mb-3 block">{course.category.name}</span>
             )}
             <h1 className="text-3xl font-bold text-white mb-4">{course.title}</h1>
             {course.shortDescription && (
@@ -61,7 +61,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-              <span>Created by <span className="text-purple-400 font-medium">{course.instructor?.name}</span></span>
+              <span>Created by <span className="text-amber-400 font-medium">{course.instructor?.name}</span></span>
               <span className="flex items-center gap-1"><Globe className="w-4 h-4" /> {course.language}</span>
               <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {formatDuration(course.totalDuration)}</span>
               <span className="flex items-center gap-1"><BookOpen className="w-4 h-4" /> {totalLectures} lectures</span>
@@ -82,7 +82,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
                 <div className="grid sm:grid-cols-2 gap-3">
                   {course.objectives.map((obj: string, i: number) => (
                     <div key={i} className="flex gap-2">
-                      <CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
                       <span className="text-sm text-gray-700">{obj}</span>
                     </div>
                   ))}
@@ -128,16 +128,16 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
                     </summary>
                     <div className="divide-y divide-gray-100">
                       {section.lectures.map((lecture: any) => (
-                        <div key={lecture.id} className="flex items-center justify-between p-4 hover:bg-purple-50 transition-colors">
+                        <div key={lecture.id} className="flex items-center justify-between p-4 hover:bg-amber-50 transition-colors">
                           <div className="flex items-center gap-3">
                             {lecture.isFree ? (
-                              <Play className="w-4 h-4 text-purple-600" />
+                              <Play className="w-4 h-4 text-amber-600" />
                             ) : (
                               <Lock className="w-4 h-4 text-gray-400" />
                             )}
                             <span className="text-sm text-gray-700">{lecture.title}</span>
                             {lecture.isFree && (
-                              <span className="text-xs text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">Preview</span>
+                              <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Preview</span>
                             )}
                           </div>
                           <span className="text-xs text-gray-400">{formatDuration(lecture.duration)}</span>
@@ -153,7 +153,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
             <section className="border border-gray-200 rounded-2xl p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-4">About the Instructor</h2>
               <div className="flex gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shrink-0">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center text-white font-bold text-xl shrink-0">
                   {(course.instructor?.name || "I")[0]}
                 </div>
                 <div>
@@ -172,7 +172,7 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
                 <div className="space-y-4">
                   {course.reviews.map((review: any) => (
                     <div key={review.id} className="flex gap-4 pb-4 border-b border-gray-100 last:border-0">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-400 flex items-center justify-center text-white font-bold text-sm shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center text-white font-bold text-sm shrink-0">
                         {(review.user?.name || "U")[0]}
                       </div>
                       <div>
@@ -198,18 +198,18 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
             <div className="sticky top-24">
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
                 {/* Video preview or thumbnail */}
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-indigo-100">
+                <div className="relative aspect-video bg-gradient-to-br from-amber-100 to-yellow-100">
                   {course.thumbnail ? (
                     <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <BookOpen className="w-16 h-16 text-purple-300" />
+                      <BookOpen className="w-16 h-16 text-amber-300" />
                     </div>
                   )}
                   {course.previewVideo && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer hover:bg-black/40 transition-colors">
                       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-                        <Play className="w-6 h-6 text-purple-600 ml-1" />
+                        <Play className="w-6 h-6 text-amber-600 ml-1" />
                       </div>
                     </div>
                   )}
@@ -241,11 +241,11 @@ export default async function CourseDetailPage({ params }: { params: { slug: str
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <h4 className="font-semibold text-gray-900 mb-3 text-sm">This course includes:</h4>
                     <ul className="space-y-2 text-sm text-gray-600">
-                      <li className="flex gap-2"><BookOpen className="w-4 h-4 text-purple-600 shrink-0" />{totalLectures} on-demand lectures</li>
-                      <li className="flex gap-2"><Clock className="w-4 h-4 text-purple-600 shrink-0" />{formatDuration(course.totalDuration)} of video content</li>
-                      <li className="flex gap-2"><Award className="w-4 h-4 text-purple-600 shrink-0" />Certificate of completion</li>
-                      <li className="flex gap-2"><Globe className="w-4 h-4 text-purple-600 shrink-0" />Full lifetime access</li>
-                      <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-purple-600 shrink-0" />Access on all devices</li>
+                      <li className="flex gap-2"><BookOpen className="w-4 h-4 text-amber-600 shrink-0" />{totalLectures} on-demand lectures</li>
+                      <li className="flex gap-2"><Clock className="w-4 h-4 text-amber-600 shrink-0" />{formatDuration(course.totalDuration)} of video content</li>
+                      <li className="flex gap-2"><Award className="w-4 h-4 text-amber-600 shrink-0" />Certificate of completion</li>
+                      <li className="flex gap-2"><Globe className="w-4 h-4 text-amber-600 shrink-0" />Full lifetime access</li>
+                      <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-amber-600 shrink-0" />Access on all devices</li>
                     </ul>
                   </div>
                 </div>
