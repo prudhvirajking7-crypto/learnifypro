@@ -69,6 +69,7 @@ model OtpToken {
   userId    String
   email     String
   token     String
+  type      String   @default("REGISTER")
   expires   DateTime
   used      Boolean  @default(false)
   createdAt DateTime @default(now())

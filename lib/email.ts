@@ -69,6 +69,58 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
   await transporter.sendMail(mailOptions);
 }
 
+export async function sendPasswordResetEmail(email: string, otp: string, name?: string) {
+  const mailOptions = {
+    from: `"LearnifyPro" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    to: email,
+    subject: "Reset your password - LearnifyPro",
+    html: `
+      <!DOCTYPE html>
+      <html>
+        <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+        <body style="margin:0;padding:0;background:#f4f4f5;font-family:Arial,sans-serif;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f5;padding:40px 0;">
+            <tr><td align="center">
+              <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+                <tr>
+                  <td style="background:linear-gradient(135deg,#7c3aed,#4f46e5);padding:40px;text-align:center;">
+                    <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">LearnifyPro</h1>
+                    <p style="color:rgba(255,255,255,0.8);margin:8px 0 0;font-size:14px;">Password Reset Request</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:40px;">
+                    <h2 style="color:#1a1a2e;margin:0 0 16px;font-size:22px;">Reset Your Password</h2>
+                    <p style="color:#6b7280;font-size:15px;line-height:1.6;margin:0 0 32px;">
+                      Hi ${name || "there"},<br><br>
+                      We received a request to reset your LearnifyPro password. Use the code below to set a new password.
+                    </p>
+                    <div style="background:#f5f3ff;border:2px dashed #7c3aed;border-radius:12px;padding:24px;text-align:center;margin:0 0 32px;">
+                      <p style="color:#6b7280;font-size:13px;margin:0 0 8px;text-transform:uppercase;letter-spacing:1px;">Reset Code</p>
+                      <h1 style="color:#7c3aed;font-size:48px;letter-spacing:12px;margin:0;font-weight:700;">${otp}</h1>
+                      <p style="color:#9ca3af;font-size:12px;margin:12px 0 0;">Valid for 10 minutes only</p>
+                    </div>
+                    <p style="color:#9ca3af;font-size:13px;line-height:1.6;margin:0;">
+                      If you didn't request a password reset, you can safely ignore this email.<br>
+                      Never share this code with anyone.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background:#f9fafb;padding:24px;text-align:center;border-top:1px solid #e5e7eb;">
+                    <p style="color:#9ca3af;font-size:12px;margin:0;">© 2024 LearnifyPro. All rights reserved.</p>
+                  </td>
+                </tr>
+              </table>
+            </td></tr>
+          </table>
+        </body>
+      </html>
+    `,
+  };
+  await transporter.sendMail(mailOptions);
+}
+
 export async function sendWelcomeEmail(email: string, name: string) {
   const mailOptions = {
     from: `"LearnifyPro" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,

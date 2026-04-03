@@ -38,10 +38,15 @@ export async function POST(req: NextRequest) {
           { status: 409 }
         );
       }
-      // Re-send OTP if account exists but not verified
+      // Re-send OTP and update password for unverified account
+      const hashedPassword = await bcrypt.hash(password, 12);
+      await prisma.user.update({
+        where: { id: existingUser.id },
+        data: { name, password: hashedPassword },
+      });
       await prisma.otpToken.deleteMany({ where: { userId: existingUser.id } });
       const otp = generateOTP();
-      const expires = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+      const expires = new Date(Date.now() + 10 * 60 * 1000);
 
       await prisma.otpToken.create({
         data: { userId: existingUser.id, email, token: otp, expires },
