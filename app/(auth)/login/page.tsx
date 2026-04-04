@@ -17,7 +17,18 @@ type LoginForm = z.infer<typeof loginSchema>;
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
+
+  // NextAuth middleware passes a full URL like http://localhost:3000/cart
+  // Extract just the pathname so Next.js router.push works correctly
+  const rawCallback = searchParams.get("callbackUrl") || "/dashboard";
+  const callbackUrl = (() => {
+    try {
+      const u = new URL(rawCallback);
+      return u.pathname + u.search + u.hash;
+    } catch {
+      return rawCallback; // already a relative path
+    }
+  })();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
@@ -52,7 +63,6 @@ export default function LoginPage() {
         setError("Invalid email or password.");
       } else {
         router.push(callbackUrl);
-        router.refresh();
       }
     } catch {
       setError("Something went wrong. Please try again.");

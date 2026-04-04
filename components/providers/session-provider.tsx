@@ -9,7 +9,11 @@ export default function SessionProvider({
   session: any;
 }) {
   return (
-    <NextAuthSessionProvider session={session}>
+    <NextAuthSessionProvider
+      session={session}
+      refetchInterval={5 * 60}       // re-validate session every 5 minutes
+      refetchOnWindowFocus={true}    // re-validate when user returns to tab
+    >
       {children}
     </NextAuthSessionProvider>
   );

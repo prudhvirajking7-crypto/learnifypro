@@ -46,6 +46,8 @@ export const authOptions: NextAuthOptions = {
   ],
   session: {
     strategy: "jwt",
+    maxAge: 2 * 60 * 60,      // session expires after 2 hours
+    updateAge: 30 * 60,        // silently extend if user is active every 30 min
   },
   pages: {
     signIn: "/login",
@@ -74,6 +76,15 @@ export const authOptions: NextAuthOptions = {
         session.user.role = token.role as string;
       }
       return session;
+    },
+    async redirect({ url, baseUrl }) {
+      // Relative paths — safe to redirect
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      // Same origin — allow
+      try {
+        if (new URL(url).origin === new URL(baseUrl).origin) return url;
+      } catch {}
+      return baseUrl;
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
