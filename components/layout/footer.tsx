@@ -95,14 +95,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center sm:text-left">
           <p className="text-sm">© 2025 LearnifyPro. All rights reserved.</p>
-          <div className="flex items-center gap-2 text-sm">
-            <span>🌍</span>
-            <span>English</span>
-            <span className="text-gray-600">|</span>
-            <span>₹ INR</span>
-          </div>
         </div>
       </div>
     </footer>

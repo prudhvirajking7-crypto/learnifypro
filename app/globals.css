@@ -49,11 +49,11 @@ html {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7c3aed;
+  background: rgba(217,119,6,0.5);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6d28d9;
+  background: rgba(245,158,11,0.7);
 }
 
 /* 3D card tilt effect */
@@ -124,3 +124,27 @@ html {
 /* Perspective container */
 .perspective-1000 { perspective: 1000px; }
 .perspective-2000 { perspective: 2000px; }
+
+/* Page transition */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-page-enter {
+  animation: page-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Admin panel fade-in */
+@keyframes panel-enter {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-panel-enter {
+  animation: panel-enter 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

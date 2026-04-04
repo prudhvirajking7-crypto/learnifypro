@@ -3,6 +3,16 @@ import { prisma } from "@/lib/prisma";
 import { ChevronRight, Zap, Award, Play, GraduationCap, BookOpen } from "lucide-react";
 import TiltCard from "@/components/ui/tilt-card";
 
+async function getActivePartners() {
+  try {
+    return await prisma.partner.findMany({
+      where: { active: true },
+      orderBy: { order: "asc" },
+      take: 12,
+    });
+  } catch { return []; }
+}
+
 async function getFeaturedCourses() {
   try {
     return await prisma.course.findMany({
@@ -45,7 +55,7 @@ const STATS = [
 ];
 
 export default async function HomePage() {
-  const featured = await getFeaturedCourses();
+  const [featured, partners] = await Promise.all([getFeaturedCourses(), getActivePartners()]);
 
   return (
     <main>
@@ -200,6 +210,27 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Trusted Partners ─────────────────────────────────────── */}
+      {partners.length > 0 && (
+        <section className="py-14 bg-white border-y border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Trusted by teams at</p>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              {partners.map((p) => (
+                p.logo ? (
+                  <a key={p.id} href={p.website || "#"} target="_blank" rel="noopener noreferrer"
+                    className="opacity-50 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0">
+                    <img src={p.logo} alt={p.name} className="h-8 object-contain max-w-[120px]" />
+                  </a>
+                ) : (
+                  <span key={p.id} className="text-gray-400 font-semibold text-sm hover:text-amber-600 transition-colors cursor-default">{p.name}</span>
+                )
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="relative py-20 bg-gradient-to-r from-amber-700 to-yellow-800 overflow-hidden">

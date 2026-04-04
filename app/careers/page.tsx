@@ -1,29 +1,6 @@
-import Link from "next/link";
-import { MapPin, Clock, DollarSign, Laptop, BookOpen, Coffee, TrendingUp, ChevronRight } from "lucide-react";
-
-const ROLES = [
-  {
-    title: "Senior Full Stack Engineer",
-    location: "Remote",
-    type: "Full-time",
-    dept: "Engineering",
-    desc: "Build and scale the core LearnifyPro platform. You'll work on everything from API design to real-time video features using Next.js, Node.js, and PostgreSQL.",
-  },
-  {
-    title: "Content Partnership Manager",
-    location: "Remote",
-    type: "Full-time",
-    dept: "Partnerships",
-    desc: "Identify, onboard, and grow relationships with expert instructors and institutional content partners across tech and business domains.",
-  },
-  {
-    title: "UI/UX Designer",
-    location: "Remote",
-    type: "Full-time",
-    dept: "Design",
-    desc: "Own the end-to-end design of learner-facing product experiences — from wireframes to high-fidelity Figma prototypes, working closely with engineering.",
-  },
-];
+import { MapPin, Clock, DollarSign, Laptop, BookOpen, Coffee, TrendingUp } from "lucide-react";
+import { prisma } from "@/lib/prisma";
+import CareersClient from "@/components/careers/careers-client";
 
 const PERKS = [
   { icon: Laptop, title: "Remote First", desc: "Work from anywhere in the world. We're fully distributed and async-friendly." },
@@ -32,7 +9,12 @@ const PERKS = [
   { icon: TrendingUp, title: "Equity", desc: "Every team member gets meaningful equity. When we grow, you grow with us." },
 ];
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  const jobs = await prisma.jobPost.findMany({
+    where: { active: true },
+    orderBy: { createdAt: "desc" },
+  });
+
   return (
     <main className="pt-20">
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -66,46 +48,22 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* ── Open Roles ───────────────────────────────────────────── */}
+      {/* ── Open Roles (dynamic) ─────────────────────────────────── */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Open Roles</h2>
             <p className="text-gray-500">All positions are fully remote and open worldwide.</p>
           </div>
-          <div className="space-y-5">
-            {ROLES.map((role) => (
-              <div key={role.title} className="bg-white rounded-2xl border border-gray-100 p-7 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <span className="text-xs font-semibold bg-amber-50 text-amber-700 px-3 py-1 rounded-full border border-amber-100">
-                      {role.dept}
-                    </span>
-                    <h3 className="text-xl font-bold text-gray-900 mt-3 mb-2 group-hover:text-amber-600 transition-colors">
-                      {role.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4 max-w-xl">{role.desc}</p>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="flex items-center gap-1.5 text-sm text-gray-500">
-                        <MapPin className="w-4 h-4 text-amber-500" />
-                        {role.location}
-                      </span>
-                      <span className="flex items-center gap-1.5 text-sm text-gray-500">
-                        <Clock className="w-4 h-4 text-amber-500" />
-                        {role.type}
-                      </span>
-                    </div>
-                  </div>
-                  <Link
-                    href="/register"
-                    className="px-6 py-3 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-semibold rounded-xl hover:from-amber-700 hover:to-yellow-800 transition-all shadow-md shadow-amber-200 flex items-center gap-2 shrink-0"
-                  >
-                    Apply Now <ChevronRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+
+          {jobs.length === 0 ? (
+            <div className="text-center py-16 bg-white rounded-2xl border border-gray-100">
+              <p className="text-gray-400 text-lg">No open positions at the moment.</p>
+              <p className="text-gray-400 text-sm mt-2">Check back soon or send us a general application below.</p>
+            </div>
+          ) : (
+            <CareersClient jobs={jobs} />
+          )}
         </div>
       </section>
 

@@ -8,7 +8,7 @@ import {
   Search, ShoppingCart, Menu, X, BookOpen, ChevronDown,
   LogOut, User, LayoutDashboard, GraduationCap, Code2,
   BarChart3, Smartphone, Palette, Briefcase, Megaphone,
-  DollarSign, Wrench,
+  DollarSign, Wrench, ShieldCheck, PenSquare,
 } from "lucide-react";
 import { getInitials } from "@/lib/utils";
 
@@ -307,6 +307,8 @@ export default function Navbar() {
                     </div>
                     <div className="border-t border-gray-100 py-1.5 px-2">
                       {[
+                        ...(session.user?.role === "ADMIN" ? [{ href: "/admin", icon: ShieldCheck, label: "Admin Panel" }] : []),
+                        ...(session.user?.role === "INSTRUCTOR" ? [{ href: "/instructor", icon: PenSquare, label: "Instructor Panel" }] : []),
                         { href: "/dashboard",             icon: LayoutDashboard, label: "Dashboard" },
                         { href: "/dashboard/my-learning", icon: BookOpen,        label: "My Learning" },
                         { href: "/profile",               icon: User,            label: "Profile" },
