@@ -83,6 +83,10 @@ export default function CourseCard({ course, isEnrolled }: CourseCardProps) {
               <BookOpen className="w-12 h-12 text-amber-300" />
             </div>
           )}
+
+          {/* Amber gradient hover overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-amber-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
           {discountPercent > 0 && (
             <div className="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
               -{discountPercent}%

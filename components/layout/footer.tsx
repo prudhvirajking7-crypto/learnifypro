@@ -61,9 +61,16 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              {["About Us", "Careers", "Blog", "Press", "Affiliate", "Investors"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-amber-400 transition-colors">{item}</Link>
+              {[
+                { label: "About Us", href: "/about" },
+                { label: "Careers", href: "/careers" },
+                { label: "Blog", href: "/blog" },
+                { label: "Press", href: "/press" },
+                { label: "Affiliate", href: "/affiliate" },
+                { label: "Investors", href: "/investors" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="hover:text-amber-400 transition-colors">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -72,9 +79,16 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Support</h4>
             <ul className="space-y-2 text-sm">
-              {["Help Center", "Contact Us", "Privacy Policy", "Terms of Service", "Cookie Policy", "Accessibility"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-amber-400 transition-colors">{item}</Link>
+              {[
+                { label: "Help Center", href: "/help" },
+                { label: "Contact Us", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms of Service", href: "/terms" },
+                { label: "Cookie Policy", href: "/cookies" },
+                { label: "Accessibility", href: "/accessibility" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} className="hover:text-amber-400 transition-colors">{label}</Link>
                 </li>
               ))}
             </ul>
