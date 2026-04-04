@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { PlusCircle, Trash2, ChevronDown, ChevronRight, Video, FileText, HelpCircle, GripVertical, Upload, Link2 } from "lucide-react";
+import { PlusCircle, Trash2, ChevronDown, ChevronRight, Video, FileText, HelpCircle, GripVertical, Link2 } from "lucide-react";
 import toast from "react-hot-toast";
 
 interface Lecture {
@@ -14,7 +14,7 @@ export default function SectionEditor({ courseId, initialSections }: { courseId:
   const [expanded, setExpanded] = useState<Set<string>>(new Set(initialSections.map((s) => s.id)));
   const [saving, setSaving] = useState<string | null>(null);
 
-  const toggleExpand = (id: string) => setExpanded((prev) => { const s = new Set(prev); s.has(id) ? s.delete(id) : s.add(id); return s; });
+  const toggleExpand = (id: string) => setExpanded((prev) => { const s = new Set(prev); if (s.has(id)) { s.delete(id); } else { s.add(id); } return s; });
 
   /* SECTION actions */
   const addSection = async () => {
@@ -83,21 +83,7 @@ export default function SectionEditor({ courseId, initialSections }: { courseId:
     finally { setSaving(null); }
   };
 
-  const uploadVideo = async (sectionId: string, lecture: Lecture, file: File) => {
-    const toastId = toast.loading("Uploading video...");
-    const form = new FormData();
-    form.append("videoUrl", lecture.videoUrl || "");
-    form.append("title", lecture.title);
-    form.append("type", "VIDEO");
-    form.append("isFree", String(lecture.isFree));
-    form.append("duration", String(lecture.duration));
-    // Note: In production, upload to cloud first, then store URL
-    // For now we store the video URL the user types
-    toast.dismiss(toastId);
-    toast("For production: upload to Cloudflare/Bunny/YouTube, then paste the URL below", { icon: "ℹ️" });
-  };
-
-  const typeIcon = (type: string) => type === "VIDEO" ? <Video className="w-3.5 h-3.5" /> : type === "ARTICLE" ? <FileText className="w-3.5 h-3.5" /> : <HelpCircle className="w-3.5 h-3.5" />;
+const typeIcon = (type: string) => type === "VIDEO" ? <Video className="w-3.5 h-3.5" /> : type === "ARTICLE" ? <FileText className="w-3.5 h-3.5" /> : <HelpCircle className="w-3.5 h-3.5" />;
 
   const inputCls = "flex-1 min-w-0 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white text-xs placeholder:text-gray-600 focus:outline-none focus:border-amber-500/50";
 
