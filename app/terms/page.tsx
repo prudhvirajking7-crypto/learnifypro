@@ -73,7 +73,7 @@ export default function TermsPage() {
               {/* Intro */}
               <div className="bg-white rounded-2xl shadow-lg border border-amber-100 p-8">
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the LearnifyPro website and services (&ldquo;Service&rdquo;) operated by LearnifyPro (&ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, you may not use the Service.
+                  These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the TechProwexa website and services (&ldquo;Service&rdquo;) operated by TechProwexa (&ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, you may not use the Service.
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ export default function TermsPage() {
                   Use of Service
                 </h2>
                 <div className="space-y-3 text-gray-600 leading-relaxed text-sm">
-                  <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You are responsible for all activity that occurs under your account. LearnifyPro grants you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for personal, non-commercial learning purposes.</p>
+                  <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You are responsible for all activity that occurs under your account. TechProwexa grants you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for personal, non-commercial learning purposes.</p>
                   <p>We reserve the right to modify, suspend, or discontinue any aspect of the Service at any time with reasonable notice where practicable.</p>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function TermsPage() {
                   <ul className="list-disc list-inside space-y-1.5 pl-2">
                     <li>Course access is provided to you individually and may not be shared.</li>
                     <li>You may not record, reproduce, redistribute, or resell any course content.</li>
-                    <li>Course content may be updated, revised, or retired by the instructor or LearnifyPro at any time.</li>
+                    <li>Course content may be updated, revised, or retired by the instructor or TechProwexa at any time.</li>
                     <li>Completion certificates are issued only when all required activities are finished.</li>
                   </ul>
                 </div>
@@ -140,8 +140,8 @@ export default function TermsPage() {
                   Intellectual Property
                 </h2>
                 <div className="space-y-3 text-gray-600 leading-relaxed text-sm">
-                  <p>All content on the LearnifyPro platform — including course videos, materials, logos, branding, and software — is the intellectual property of LearnifyPro or its instructors and is protected by applicable copyright, trademark, and other intellectual property laws.</p>
-                  <p>You retain ownership of any content you submit (such as reviews or forum posts) but grant LearnifyPro a worldwide, royalty-free licence to use, display, and distribute that content in connection with the Service.</p>
+                  <p>All content on the TechProwexa platform — including course videos, materials, logos, branding, and software — is the intellectual property of TechProwexa or its instructors and is protected by applicable copyright, trademark, and other intellectual property laws.</p>
+                  <p>You retain ownership of any content you submit (such as reviews or forum posts) but grant TechProwexa a worldwide, royalty-free licence to use, display, and distribute that content in connection with the Service.</p>
                 </div>
               </div>
 
@@ -219,7 +219,7 @@ export default function TermsPage() {
                 <div className="space-y-3 text-gray-600 leading-relaxed text-sm">
                   <p>If you have questions about these Terms, please contact us:</p>
                   <div className="bg-amber-50 rounded-xl p-4 border border-amber-100 space-y-1">
-                    <p className="font-semibold text-gray-800">LearnifyPro — Legal Team</p>
+                    <p className="font-semibold text-gray-800">TechProwexa — Legal Team</p>
                     <p>
                       Email:{" "}
                       <a href="mailto:legal@learnifypro.com" className="text-amber-600 underline underline-offset-2">

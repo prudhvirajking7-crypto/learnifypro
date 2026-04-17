@@ -136,7 +136,7 @@ export default function CookiesPage() {
               Cookies are small text files that are placed on your device (computer, phone, or tablet) by websites you visit. They are widely used to make websites work, improve efficiency, and provide information to site owners.
             </p>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Cookies can be &ldquo;persistent&rdquo; (they remain on your device for a specified period or until you delete them) or &ldquo;session&rdquo; cookies (they are deleted as soon as you close your browser). This policy explains which cookies LearnifyPro uses and why.
+              Cookies can be &ldquo;persistent&rdquo; (they remain on your device for a specified period or until you delete them) or &ldquo;session&rdquo; cookies (they are deleted as soon as you close your browser). This policy explains which cookies TechProwexa uses and why.
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export default function CookiesPage() {
           <div className="bg-white rounded-2xl shadow-lg border border-amber-100 p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Cookies We Use</h2>
             <p className="text-gray-500 text-sm mb-6">
-              The table below lists the specific cookies set by LearnifyPro.
+              The table below lists the specific cookies set by TechProwexa.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm text-left">

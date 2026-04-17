@@ -99,7 +99,7 @@ export default function EnrollButton({ course, session }: EnrollButtonProps) {
         key: data.key,
         amount: data.amount,
         currency: data.currency,
-        name: "LearnifyPro",
+        name: "TechProwexa",
         description: course.title,
         order_id: data.orderId,
         handler: async (response: any) => {

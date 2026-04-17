@@ -28,7 +28,7 @@ const HIGHLIGHTS = [
   {
     icon: Lightbulb,
     title: "Differentiated Product",
-    desc: "LearnifyPro is built around project-based learning and career outcomes — not just video content. Our curriculum is co-designed with hiring companies, creating a measurable edge over traditional MOOC platforms.",
+    desc: "TechProwexa is built around project-based learning and career outcomes — not just video content. Our curriculum is co-designed with hiring companies, creating a measurable edge over traditional MOOC platforms.",
   },
   {
     icon: ShieldCheck,
@@ -61,7 +61,7 @@ export default function InvestorsPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            LearnifyPro is building the definitive career-outcomes platform for the next generation of knowledge workers — starting in India, scaling globally.
+            TechProwexa is building the definitive career-outcomes platform for the next generation of knowledge workers — starting in India, scaling globally.
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function InvestorsPage() {
             Closing the gap between education and employment
           </h2>
           <p className="text-gray-600 leading-relaxed text-lg">
-            Globally, over 300 million young people are underemployed — not for lack of ambition, but because formal education fails to teach the skills employers actually hire for. LearnifyPro is solving this at scale by pairing working professionals as instructors with a curriculum built around real job requirements.
+            Globally, over 300 million young people are underemployed — not for lack of ambition, but because formal education fails to teach the skills employers actually hire for. TechProwexa is solving this at scale by pairing working professionals as instructors with a curriculum built around real job requirements.
           </p>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function InvestorsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Key Metrics</h2>
-            <p className="text-gray-500 max-w-lg mx-auto">A snapshot of LearnifyPro&apos;s current scale as we enter our growth phase.</p>
+            <p className="text-gray-500 max-w-lg mx-auto">A snapshot of TechProwexa&apos;s current scale as we enter our growth phase.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {METRICS.map(({ icon: Icon, value, label, sub }) => (
@@ -174,7 +174,7 @@ export default function InvestorsPage() {
               {
                 num: "03",
                 title: "Employer Partnerships",
-                desc: "Build direct hiring channels with 50+ companies so that LearnifyPro certificates carry verifiable, employer-trusted weight in recruitment decisions.",
+                desc: "Build direct hiring channels with 50+ companies so that TechProwexa certificates carry verifiable, employer-trusted weight in recruitment decisions.",
               },
             ].map((item) => (
               <div key={item.num} className="flex gap-6 items-start bg-white rounded-2xl border border-gray-100 p-7 hover:shadow-md transition-all">
@@ -211,7 +211,7 @@ export default function InvestorsPage() {
       <section className="py-8 bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <p className="text-slate-500 text-xs leading-relaxed text-center">
-            <strong className="text-slate-400">Disclaimer:</strong> This page is for informational purposes only and does not constitute an offer or solicitation to sell securities. All forward-looking statements reflect current expectations and are subject to risks and uncertainties. Market size figures are sourced from third-party research reports and are provided for context only. LearnifyPro makes no representation as to their accuracy. Past performance is not indicative of future results. Any investment in an early-stage company carries significant risk, including the possible loss of the entire invested amount. Please consult a qualified financial adviser before making any investment decision.
+            <strong className="text-slate-400">Disclaimer:</strong> This page is for informational purposes only and does not constitute an offer or solicitation to sell securities. All forward-looking statements reflect current expectations and are subject to risks and uncertainties. Market size figures are sourced from third-party research reports and are provided for context only. TechProwexa makes no representation as to their accuracy. Past performance is not indicative of future results. Any investment in an early-stage company carries significant risk, including the possible loss of the entire invested amount. Please consult a qualified financial adviser before making any investment decision.
           </p>
         </div>
       </section>

@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { GraduationCap, Mail, CheckCircle, RefreshCw } from "lucide-react";
+import { Mail, CheckCircle, RefreshCw } from "lucide-react";
 import toast from "react-hot-toast";
 
 function OTPForm() {
@@ -170,9 +170,9 @@ export default function VerifyOTPPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-4">
             <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
+              <span className="font-black text-white text-sm leading-none tracking-tight">TP</span>
             </div>
-            <span className="font-bold text-2xl text-gray-900">Learnify<span className="text-amber-600">Pro</span></span>
+            <span className="font-bold text-2xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
           </Link>
         </div>
 

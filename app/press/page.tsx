@@ -6,7 +6,7 @@ const COVERAGE = [
     publication: "TechCrunch",
     initials: "TC",
     color: "from-green-500 to-emerald-600",
-    quote: "LearnifyPro is quietly building something that the edtech giants missed — a genuine focus on career outcomes over vanity metrics.",
+    quote: "TechProwexa is quietly building something that the edtech giants missed — a genuine focus on career outcomes over vanity metrics.",
     date: "January 2025",
     category: "Startup Spotlight",
   },
@@ -55,7 +55,7 @@ export default function PressPage() {
             Press &amp; Media
           </span>
           <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            LearnifyPro{" "}
+            TechProwexa{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
               in the Press
             </span>
@@ -122,7 +122,7 @@ export default function PressPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Brand Assets</h2>
             <p className="text-gray-500 max-w-lg mx-auto">
-              Please use our official brand assets and follow these guidelines when referencing LearnifyPro.
+              Please use our official brand assets and follow these guidelines when referencing TechProwexa.
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-6 mb-10">
@@ -137,7 +137,7 @@ export default function PressPage() {
             ))}
           </div>
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-sm text-amber-800 leading-relaxed">
-            <strong>Usage Guidelines:</strong> Do not modify the logo, change its colours, or place it on backgrounds that reduce visibility. Always maintain the specified clear space. The &ldquo;LearnifyPro&rdquo; name should always appear as one word with capital L and P. When in doubt, contact our press team before publishing.
+            <strong>Usage Guidelines:</strong> Do not modify the logo, change its colours, or place it on backgrounds that reduce visibility. Always maintain the specified clear space. The &ldquo;TechProwexa&rdquo; name should always appear as one word with capital L and P. When in doubt, contact our press team before publishing.
           </div>
         </div>
       </section>

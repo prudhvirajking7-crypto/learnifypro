@@ -1,4 +1,4 @@
-# LearnifyPro — Full-Stack E-Learning Platform
+# TechProwexa — Full-Stack E-Learning Platform
 
 A production-grade Udemy-like e-learning platform built with Next.js 14, PostgreSQL, Stripe, and Razorpay.
 
@@ -64,7 +64,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your@email.com
 SMTP_PASS=your-app-password
-SMTP_FROM=LearnifyPro <your@email.com>
+SMTP_FROM=TechProwexa <your@email.com>
 
 STRIPE_SECRET_KEY=sk_test_...
 NEXT_PUBLIC_STRIPE_KEY=pk_test_...

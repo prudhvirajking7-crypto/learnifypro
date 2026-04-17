@@ -6,7 +6,7 @@ import { z } from "zod";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { GraduationCap, Eye, EyeOff, Mail, Lock, AlertCircle, ArrowLeft } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, AlertCircle, ArrowLeft } from "lucide-react";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email"),
@@ -97,9 +97,9 @@ export default function LoginPage() {
           <div className="text-center mb-5">
             <Link href="/" className="inline-flex items-center gap-2 mb-3">
               <div className="w-9 h-9 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center shadow-md shadow-amber-200">
-                <GraduationCap className="w-5 h-5 text-white" />
+                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
               </div>
-              <span className="font-bold text-xl text-gray-900">Learnify<span className="text-amber-600">Pro</span></span>
+              <span className="font-bold text-xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
             </Link>
             <h1 className="text-xl font-bold text-gray-900">Welcome back!</h1>
             <p className="text-gray-500 text-sm mt-0.5">Sign in to continue learning</p>

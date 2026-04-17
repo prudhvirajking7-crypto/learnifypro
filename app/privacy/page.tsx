@@ -71,10 +71,10 @@ export default function PrivacyPage() {
               {/* Intro */}
               <div className="bg-white rounded-2xl shadow-lg border border-amber-100 p-8">
                 <p className="text-gray-600 leading-relaxed">
-                  LearnifyPro (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is
+                  TechProwexa (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is
                   committed to protecting your personal information. This Privacy Policy explains
                   how we collect, use, disclose, and safeguard your information when you visit our
-                  website and use our services. Please read it carefully. By using LearnifyPro, you
+                  website and use our services. Please read it carefully. By using TechProwexa, you
                   agree to the practices described herein.
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
                     <li><strong>Service providers:</strong> We share data with vendors who help operate our platform (payment processors, cloud hosting, email delivery, analytics). They are contractually obligated to protect your data.</li>
                     <li><strong>Instructors:</strong> Course instructors see aggregate enrollment data but not your personal contact information.</li>
                     <li><strong>Legal requirements:</strong> We may disclose information if required by law, court order, or to protect rights and safety.</li>
-                    <li><strong>Business transfers:</strong> If LearnifyPro is acquired or merged, your data may transfer to the successor entity under the same protections.</li>
+                    <li><strong>Business transfers:</strong> If TechProwexa is acquired or merged, your data may transfer to the successor entity under the same protections.</li>
                   </ul>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function PrivacyPage() {
                 </h2>
                 <div className="text-gray-600 leading-relaxed text-sm">
                   <p>
-                    LearnifyPro is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately and we will delete it without delay.
+                    TechProwexa is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately and we will delete it without delay.
                   </p>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export default function PrivacyPage() {
                 </h2>
                 <div className="text-gray-600 leading-relaxed text-sm">
                   <p>
-                    We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email or by displaying a prominent notice on our platform prior to the change becoming effective. The &ldquo;Last updated&rdquo; date at the top of this page indicates when the most recent revision was made. Continued use of LearnifyPro after changes take effect constitutes your acceptance of the revised policy.
+                    We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email or by displaying a prominent notice on our platform prior to the change becoming effective. The &ldquo;Last updated&rdquo; date at the top of this page indicates when the most recent revision was made. Continued use of TechProwexa after changes take effect constitutes your acceptance of the revised policy.
                   </p>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function PrivacyPage() {
                 <div className="space-y-3 text-gray-600 leading-relaxed text-sm">
                   <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
                   <div className="bg-amber-50 rounded-xl p-4 border border-amber-100 space-y-1">
-                    <p className="font-semibold text-gray-800">LearnifyPro — Privacy Team</p>
+                    <p className="font-semibold text-gray-800">TechProwexa — Privacy Team</p>
                     <p>
                       Email:{" "}
                       <a href="mailto:privacy@learnifypro.com" className="text-amber-600 underline underline-offset-2">

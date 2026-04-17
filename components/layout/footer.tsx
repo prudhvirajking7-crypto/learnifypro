@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { GraduationCap } from "lucide-react";
 
 // Social icon SVGs (lucide v1+ removed these)
 const SocialIcons = [
@@ -19,10 +18,10 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-white" />
+                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
               </div>
               <span className="font-bold text-xl text-white">
-                Learnify<span className="text-amber-400">Pro</span>
+                TechPro<span className="text-amber-400">wexa</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
@@ -96,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center sm:text-left">
-          <p className="text-sm">© 2025 LearnifyPro. All rights reserved.</p>
+          <p className="text-sm">© 2025 TechProwexa. All rights reserved.</p>
         </div>
       </div>
     </footer>

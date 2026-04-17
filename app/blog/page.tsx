@@ -84,7 +84,7 @@ export default function BlogPage() {
           <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
             From the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
-              LearnifyPro
+              TechProwexa
             </span>{" "}
             Team
           </h1>

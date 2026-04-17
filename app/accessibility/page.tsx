@@ -79,7 +79,7 @@ export default function AccessibilityPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            LearnifyPro is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone.
+            TechProwexa is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone.
           </p>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function AccessibilityPage() {
                 Education that works for everyone
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                We believe that accessible education is not an optional feature — it is a fundamental right. Our team works to ensure that learners of all abilities can access, navigate, and benefit from LearnifyPro.
+                We believe that accessible education is not an optional feature — it is a fundamental right. Our team works to ensure that learners of all abilities can access, navigate, and benefit from TechProwexa.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We measure our accessibility work against the Web Content Accessibility Guidelines (WCAG) and actively review feedback from users with disabilities to guide improvements.
@@ -111,7 +111,7 @@ export default function AccessibilityPage() {
                 </div>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">
-                LearnifyPro aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. These guidelines explain how to make web content more accessible to people with disabilities.
+                TechProwexa aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. These guidelines explain how to make web content more accessible to people with disabilities.
               </p>
               <a
                 href="https://www.w3.org/WAI/WCAG21/quickref/"
@@ -189,7 +189,7 @@ export default function AccessibilityPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-5">Our Formal Approach</h2>
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>
-                <strong className="text-gray-800">Assessment:</strong> LearnifyPro assesses the accessibility of its platform through self-evaluation and periodic third-party audits. We use automated testing tools (Axe, Lighthouse) as part of our continuous integration pipeline, supplemented by manual testing with assistive technologies.
+                <strong className="text-gray-800">Assessment:</strong> TechProwexa assesses the accessibility of its platform through self-evaluation and periodic third-party audits. We use automated testing tools (Axe, Lighthouse) as part of our continuous integration pipeline, supplemented by manual testing with assistive technologies.
               </p>
               <p>
                 <strong className="text-gray-800">Remediation:</strong> Accessibility issues reported by users or identified through audits are logged in our issue tracker and prioritised. Critical accessibility barriers are treated as high-priority bugs and addressed in the next release cycle.
@@ -211,7 +211,7 @@ export default function AccessibilityPage() {
           <MessageSquare className="w-12 h-12 text-amber-200 mx-auto mb-5" />
           <h2 className="text-3xl font-bold text-white mb-4">Accessibility Feedback</h2>
           <p className="text-amber-200 text-lg mb-10 max-w-2xl mx-auto">
-            We welcome your feedback on the accessibility of LearnifyPro. If you experience any barriers or would like to request an accessible format of any content, please let us know.
+            We welcome your feedback on the accessibility of TechProwexa. If you experience any barriers or would like to request an accessible format of any content, please let us know.
           </p>
           <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-5 text-left">

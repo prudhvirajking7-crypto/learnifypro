@@ -41,7 +41,7 @@ export default async function CareersPage() {
       {/* ── Intro ────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-5">Why LearnifyPro?</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-5">Why TechProwexa?</h2>
           <p className="text-gray-600 leading-relaxed text-lg">
             We&apos;re a small, passionate team building education infrastructure that reaches learners across four countries. You won&apos;t be a cog in a machine here — every person has real ownership, direct impact, and the trust to do their best work.
           </p>
@@ -67,11 +67,11 @@ export default async function CareersPage() {
         </div>
       </section>
 
-      {/* ── Life at LearnifyPro ───────────────────────────────────── */}
+      {/* ── Life at TechProwexa ───────────────────────────────────── */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Life at LearnifyPro</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Life at TechProwexa</h2>
             <p className="text-gray-500 max-w-lg mx-auto">We take care of our team so our team can focus on taking care of learners.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

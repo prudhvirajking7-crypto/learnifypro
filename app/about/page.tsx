@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GraduationCap, Briefcase, TrendingUp, Globe, Users, BookOpen, Award } from "lucide-react";
+import { Briefcase, TrendingUp, Globe, Users, BookOpen, Award } from "lucide-react";
 
 const PILLARS = [
   {
@@ -76,7 +76,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">What We Stand For</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Three principles guide every decision we make at LearnifyPro.</p>
+            <p className="text-gray-500 max-w-xl mx-auto">Three principles guide every decision we make at TechProwexa.</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-8">
             {PILLARS.map(({ icon: Icon, title, desc }) => (
@@ -102,13 +102,13 @@ export default function AboutPage() {
                 Built on a simple, powerful belief
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                LearnifyPro was founded with a simple belief — that great education shouldn&apos;t be locked behind location or expensive institutions.
+                TechProwexa was founded with a simple belief — that great education shouldn&apos;t be locked behind location or expensive institutions.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
                 We started as a small team of engineers and educators who were frustrated by the gap between what universities teach and what employers actually need. So we built the bridge.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Today, learners from across four continents are using LearnifyPro to break into tech, level up their careers, and build things that matter.
+                Today, learners from across four continents are using TechProwexa to break into tech, level up their careers, and build things that matter.
               </p>
             </div>
             <div className="relative">

@@ -1,4 +1,4 @@
-# LearnifyPro — Deployment Guide
+# TechProwexa — Deployment Guide
 
 ## Prerequisites
 - cPanel hosting with **Node.js** support (LiteSpeed or Apache + mod_proxy)

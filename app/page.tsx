@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { ChevronRight, Zap, Award, Play, GraduationCap, BookOpen } from "lucide-react";
+import { ChevronRight, Zap, Award, Play, BookOpen } from "lucide-react";
 import TiltCard from "@/components/ui/tilt-card";
 
 async function getActivePartners() {
@@ -43,7 +43,7 @@ const CATEGORIES = [
 const WHY_US = [
   { icon: Award, title: "Industry Expert Instructors", desc: "Every instructor is an active professional — not just a teacher. Learn from people who do this work every day." },
   { icon: Play, title: "Project-Based Learning", desc: "Build real projects from day one. Graduate with a portfolio that proves what you can do to any employer." },
-  { icon: GraduationCap, title: "Recognised Certificates", desc: "Earn certificates on course completion. Share them on LinkedIn and your CV to stand out." },
+  { icon: title: "Recognised Certificates", desc: "Earn certificates on course completion. Share them on LinkedIn and your CV to stand out." },
   { icon: Zap, title: "Learn at Your Pace", desc: "Lifetime access to every course you enrol in. Start, pause, and return whenever suits you." },
 ];
 

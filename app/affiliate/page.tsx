@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: "Are there restrictions on promotion?",
-    a: "You can't use paid search ads that bid on 'LearnifyPro' branded terms, and coupon sites require prior approval. Everything else is fair game.",
+    a: "You can't use paid search ads that bid on 'TechProwexa' branded terms, and coupon sites require prior approval. Everything else is fair game.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function AffiliatePage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10">
-            Partner with LearnifyPro and earn a generous 30% commission on every course sale you refer. No cap, no expiry — just passive income from sharing what you love.
+            Partner with TechProwexa and earn a generous 30% commission on every course sale you refer. No cap, no expiry — just passive income from sharing what you love.
           </p>
           <Link href="/register" className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all shadow-2xl shadow-amber-900/40 text-lg">
             Join the Program Free <ChevronRight className="w-5 h-5" />
@@ -119,7 +119,7 @@ export default function AffiliatePage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-5">Built for creators &amp; educators</h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Whether you run a tech blog, a YouTube channel, a developer newsletter, or a bootcamp — the LearnifyPro affiliate program is designed to reward you fairly for every learner you send our way.
+                Whether you run a tech blog, a YouTube channel, a developer newsletter, or a bootcamp — the TechProwexa affiliate program is designed to reward you fairly for every learner you send our way.
               </p>
               <ul className="space-y-3">
                 {["Content creators & bloggers", "YouTubers & podcasters", "Coding bootcamps & educators", "Developer community managers"].map((item) => (

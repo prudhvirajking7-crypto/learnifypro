@@ -56,7 +56,7 @@ async function main() {
     where: { email: "admin@learnifypro.com" },
     update: {},
     create: {
-      name: "LearnifyPro Admin",
+      name: "TechProwexa Admin",
       email: "admin@learnifypro.com",
       password: adminPassword,
       role: "ADMIN",

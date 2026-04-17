@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     }
 
     await transporter.sendMail({
-      from: `"LearnifyPro Careers" <${process.env.SMTP_USER}>`,
+      from: `"TechProwexa Careers" <${process.env.SMTP_USER}>`,
       to: "kota.prudhvi.raj.mail@gmail.com",
       subject: `New Job Application: ${jobTitle} — ${name}`,
       html: `
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
                     </tr>
                     <tr>
                       <td style="background:#f9fafb;padding:24px;text-align:center;border-top:1px solid #e5e7eb;">
-                        <p style="color:#9ca3af;font-size:12px;margin:0;">LearnifyPro Careers — Received ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+                        <p style="color:#9ca3af;font-size:12px;margin:0;">TechProwexa Careers — Received ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
                       </td>
                     </tr>
                   </table>

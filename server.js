@@ -31,6 +31,6 @@ app.prepare().then(() => {
       process.exit(1);
     })
     .listen(port, () => {
-      console.log(`> LearnifyPro ready on http://${hostname}:${port}`);
+      console.log(`> TechProwexa ready on http://${hostname}:${port}`);
     });
 });

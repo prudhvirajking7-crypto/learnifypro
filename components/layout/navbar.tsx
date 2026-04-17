@@ -6,7 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import {
   Search, ShoppingCart, Menu, X, BookOpen, ChevronDown,
-  LogOut, User, LayoutDashboard, GraduationCap, Code2,
+  LogOut, User, LayoutDashboard, Code2,
   BarChart3, Smartphone, Palette, Briefcase, Megaphone,
   DollarSign, Wrench, ShieldCheck, PenSquare,
 } from "lucide-react";
@@ -160,10 +160,10 @@ export default function Navbar() {
                   boxShadow: "0 4px 12px rgba(217,119,6,0.4), inset 0 1px 0 rgba(255,255,255,0.25)",
                 }}
               >
-                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow" />
+                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
               </div>
               <span className="font-bold text-lg sm:text-xl text-gray-900 hidden sm:block tracking-tight">
-                Learnify<span className="text-amber-600">Pro</span>
+                TechPro<span className="text-amber-600">wexa</span>
               </span>
             </Link>
 

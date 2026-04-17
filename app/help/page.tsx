@@ -16,7 +16,7 @@ const TOPICS = [
   {
     icon: BookOpen,
     title: "Getting Started",
-    desc: "New to LearnifyPro? Learn how to create an account, browse courses, and enroll in minutes.",
+    desc: "New to TechProwexa? Learn how to create an account, browse courses, and enroll in minutes.",
     href: "#getting-started",
   },
   {
@@ -62,7 +62,7 @@ const FAQS = [
     id: "faq-2",
     question: "Can I access my courses on mobile?",
     answer:
-      "Yes. LearnifyPro is fully responsive and works on any modern smartphone or tablet browser. Simply visit learnifypro.com from your mobile browser and log in. We are also working on native iOS and Android apps.",
+      "Yes. TechProwexa is fully responsive and works on any modern smartphone or tablet browser. Simply visit learnifypro.com from your mobile browser and log in. We are also working on native iOS and Android apps.",
   },
   {
     id: "faq-3",

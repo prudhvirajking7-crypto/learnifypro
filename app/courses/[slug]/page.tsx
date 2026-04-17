@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const course = await getCourse(params.slug);
   if (!course) return { title: "Course Not Found" };
   return {
-    title: `${course.title} | LearnifyPro`,
+    title: `${course.title} | TechProwexa`,
     description: course.shortDescription || course.description?.slice(0, 160),
   };
 }

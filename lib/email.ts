@@ -12,9 +12,9 @@ const transporter = nodemailer.createTransport({
 
 export async function sendOTPEmail(email: string, otp: string, name?: string) {
   const mailOptions = {
-    from: `"LearnifyPro" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
     to: email,
-    subject: "Verify your email - LearnifyPro",
+    subject: "Verify your email - TechProwexa",
     html: `
       <!DOCTYPE html>
       <html>
@@ -30,7 +30,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
                 <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
                   <tr>
                     <td style="background:linear-gradient(135deg,#7c3aed,#4f46e5);padding:40px;text-align:center;">
-                      <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">LearnifyPro</h1>
+                      <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">TechProwexa</h1>
                       <p style="color:rgba(255,255,255,0.8);margin:8px 0 0;font-size:14px;">The World's Best Learning Platform</p>
                     </td>
                   </tr>
@@ -39,7 +39,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
                       <h2 style="color:#1a1a2e;margin:0 0 16px;font-size:22px;">Verify Your Email Address</h2>
                       <p style="color:#6b7280;font-size:15px;line-height:1.6;margin:0 0 32px;">
                         Hi ${name || "there"},<br><br>
-                        Welcome to LearnifyPro! Use the OTP below to verify your email address and complete your registration.
+                        Welcome to TechProwexa! Use the OTP below to verify your email address and complete your registration.
                       </p>
                       <div style="background:#f5f3ff;border:2px dashed #7c3aed;border-radius:12px;padding:24px;text-align:center;margin:0 0 32px;">
                         <p style="color:#6b7280;font-size:13px;margin:0 0 8px;text-transform:uppercase;letter-spacing:1px;">Your OTP Code</p>
@@ -54,7 +54,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
                   </tr>
                   <tr>
                     <td style="background:#f9fafb;padding:24px;text-align:center;border-top:1px solid #e5e7eb;">
-                      <p style="color:#9ca3af;font-size:12px;margin:0;">© 2024 LearnifyPro. All rights reserved.</p>
+                      <p style="color:#9ca3af;font-size:12px;margin:0;">© 2024 TechProwexa. All rights reserved.</p>
                     </td>
                   </tr>
                 </table>
@@ -71,9 +71,9 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
 
 export async function sendPasswordResetEmail(email: string, otp: string, name?: string) {
   const mailOptions = {
-    from: `"LearnifyPro" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
     to: email,
-    subject: "Reset your password - LearnifyPro",
+    subject: "Reset your password - TechProwexa",
     html: `
       <!DOCTYPE html>
       <html>
@@ -84,7 +84,7 @@ export async function sendPasswordResetEmail(email: string, otp: string, name?: 
               <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
                 <tr>
                   <td style="background:linear-gradient(135deg,#7c3aed,#4f46e5);padding:40px;text-align:center;">
-                    <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">LearnifyPro</h1>
+                    <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">TechProwexa</h1>
                     <p style="color:rgba(255,255,255,0.8);margin:8px 0 0;font-size:14px;">Password Reset Request</p>
                   </td>
                 </tr>
@@ -93,7 +93,7 @@ export async function sendPasswordResetEmail(email: string, otp: string, name?: 
                     <h2 style="color:#1a1a2e;margin:0 0 16px;font-size:22px;">Reset Your Password</h2>
                     <p style="color:#6b7280;font-size:15px;line-height:1.6;margin:0 0 32px;">
                       Hi ${name || "there"},<br><br>
-                      We received a request to reset your LearnifyPro password. Use the code below to set a new password.
+                      We received a request to reset your TechProwexa password. Use the code below to set a new password.
                     </p>
                     <div style="background:#f5f3ff;border:2px dashed #7c3aed;border-radius:12px;padding:24px;text-align:center;margin:0 0 32px;">
                       <p style="color:#6b7280;font-size:13px;margin:0 0 8px;text-transform:uppercase;letter-spacing:1px;">Reset Code</p>
@@ -108,7 +108,7 @@ export async function sendPasswordResetEmail(email: string, otp: string, name?: 
                 </tr>
                 <tr>
                   <td style="background:#f9fafb;padding:24px;text-align:center;border-top:1px solid #e5e7eb;">
-                    <p style="color:#9ca3af;font-size:12px;margin:0;">© 2024 LearnifyPro. All rights reserved.</p>
+                    <p style="color:#9ca3af;font-size:12px;margin:0;">© 2024 TechProwexa. All rights reserved.</p>
                   </td>
                 </tr>
               </table>
@@ -123,9 +123,9 @@ export async function sendPasswordResetEmail(email: string, otp: string, name?: 
 
 export async function sendWelcomeEmail(email: string, name: string) {
   const mailOptions = {
-    from: `"LearnifyPro" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
     to: email,
-    subject: "Welcome to LearnifyPro! 🎉",
+    subject: "Welcome to TechProwexa! 🎉",
     html: `
       <!DOCTYPE html>
       <html>
@@ -136,7 +136,7 @@ export async function sendWelcomeEmail(email: string, name: string) {
                 <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
                   <tr>
                     <td style="background:linear-gradient(135deg,#7c3aed,#4f46e5);padding:40px;text-align:center;">
-                      <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">Welcome to LearnifyPro!</h1>
+                      <h1 style="color:#fff;margin:0;font-size:28px;font-weight:700;">Welcome to TechProwexa!</h1>
                     </td>
                   </tr>
                   <tr>
@@ -170,9 +170,9 @@ export async function sendOrderConfirmationEmail(
   orderDetails: { courses: string[]; total: number; orderId: string }
 ) {
   const mailOptions = {
-    from: `"LearnifyPro" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
     to: email,
-    subject: `Order Confirmed #${orderDetails.orderId} - LearnifyPro`,
+    subject: `Order Confirmed #${orderDetails.orderId} - TechProwexa`,
     html: `
       <!DOCTYPE html>
       <html>

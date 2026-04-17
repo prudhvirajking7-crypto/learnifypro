@@ -13,11 +13,11 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LearnifyPro - World Class Learning Platform",
+  title: "TechProwexa - World Class Learning Platform",
   description: "Learn from industry experts. 1000+ courses in web development, data science, design, business and more. Start learning today.",
   keywords: "online learning, courses, education, web development, data science",
   openGraph: {
-    title: "LearnifyPro - World Class Learning Platform",
+    title: "TechProwexa - World Class Learning Platform",
     description: "Learn from industry experts. Start your learning journey today.",
     type: "website",
   },

@@ -1,6 +1,6 @@
 "use client";
 import { signOut } from "next-auth/react";
-import { GraduationCap, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 export default function SignOutPage() {
   return (
@@ -9,10 +9,10 @@ export default function SignOutPage() {
         style={{ background: "rgba(255,191,36,0.04)", backdropFilter: "blur(20px)" }}>
         <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
           style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)", boxShadow: "0 8px 32px rgba(245,158,11,0.3)" }}>
-          <GraduationCap className="w-8 h-8 text-white" />
+          <span className="font-black text-white text-base leading-none tracking-tight">TP</span>
         </div>
         <h1 className="text-2xl font-bold text-white mb-2">Sign Out</h1>
-        <p className="text-amber-200/60 mb-8">Are you sure you want to sign out of LearnifyPro?</p>
+        <p className="text-amber-200/60 mb-8">Are you sure you want to sign out of TechProwexa?</p>
         <button
           onClick={() => signOut({ callbackUrl: "/" })}
           className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-white font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-95"

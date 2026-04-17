@@ -6,7 +6,7 @@ import { z } from "zod";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { GraduationCap, Eye, EyeOff, Mail, Lock, User, CheckCircle, AlertCircle, ArrowLeft } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, User, CheckCircle, AlertCircle, ArrowLeft } from "lucide-react";
 
 const registerSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -105,9 +105,9 @@ export default function RegisterPage() {
           <div className="text-center mb-4">
             <Link href="/" className="inline-flex items-center gap-2 mb-2">
               <div className="w-9 h-9 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center shadow-md shadow-amber-200">
-                <GraduationCap className="w-5 h-5 text-white" />
+                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
               </div>
-              <span className="font-bold text-xl text-gray-900">Learnify<span className="text-amber-600">Pro</span></span>
+              <span className="font-bold text-xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
             </Link>
             <h1 className="text-xl font-bold text-gray-900">Create your account</h1>
             <p className="text-gray-500 text-sm mt-0.5">Start learning today — it&apos;s free!</p>

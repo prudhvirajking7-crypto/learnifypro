@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import {
   LayoutDashboard, BookOpen, Users, BarChart3,
-  LogOut, ChevronLeft, ChevronRight, GraduationCap, ShieldCheck,
+  LogOut, ChevronLeft, ChevronRight, ShieldCheck,
   Eye, PlusCircle, Briefcase, Handshake, FileText,
 } from "lucide-react";
 
@@ -46,9 +46,9 @@ export default function AdminSidebar({ role, user }: { role: "ADMIN" | "INSTRUCT
         {!collapsed && (
           <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg">
-              <GraduationCap className="w-4 h-4 text-white" />
+              <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
             </div>
-            <span className="font-bold text-white text-sm">LearnifyPro</span>
+            <span className="font-bold text-white text-sm">TechProwexa</span>
           </Link>
         )}
         <button

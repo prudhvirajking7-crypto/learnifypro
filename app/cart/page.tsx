@@ -78,7 +78,7 @@ export default function CartPage() {
         key: data.key,
         amount: data.amount,
         currency: data.currency,
-        name: "LearnifyPro",
+        name: "TechProwexa",
         description: `${cartItems.length} Course(s)`,
         order_id: data.orderId,
         handler: async (response: any) => {
