@@ -1,4 +1,5 @@
 "use client";
+import TPLogo from "@/components/ui/tp-logo";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -104,9 +105,7 @@ export default function RegisterPage() {
           {/* Logo */}
           <div className="text-center mb-4">
             <Link href="/" className="inline-flex items-center gap-2 mb-2">
-              <div className="w-9 h-9 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center shadow-md shadow-amber-200">
-                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
-              </div>
+              <TPLogo size={36} />
               <span className="font-bold text-xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
             </Link>
             <h1 className="text-xl font-bold text-gray-900">Create your account</h1>

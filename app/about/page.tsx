@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Briefcase, TrendingUp, Globe, Users, BookOpen, Award } from "lucide-react";
+import { Briefcase, TrendingUp, Globe, Users, BookOpen, Award, GraduationCap } from "lucide-react";
 
 const PILLARS = [
   {

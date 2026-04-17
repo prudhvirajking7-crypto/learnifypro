@@ -1,4 +1,5 @@
 "use client";
+import TPLogo from "@/components/ui/tp-logo";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -45,9 +46,7 @@ export default function AdminSidebar({ role, user }: { role: "ADMIN" | "INSTRUCT
       <div className="flex items-center justify-between px-4 py-4" style={{ borderBottom: "1px solid rgba(245,158,11,0.15)" }}>
         {!collapsed && (
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg">
-              <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
-            </div>
+            <TPLogo size={32} />
             <span className="font-bold text-white text-sm">TechProwexa</span>
           </Link>
         )}

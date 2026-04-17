@@ -1,4 +1,5 @@
 "use client";
+import TPLogo from "@/components/ui/tp-logo";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -45,9 +46,7 @@ export default function ForgotPasswordPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-xl flex items-center justify-center">
-              <span className="font-black text-white text-sm leading-none tracking-tight">TP</span>
-            </div>
+              <TPLogo size={40} />
             <span className="font-bold text-2xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Forgot your password?</h1>

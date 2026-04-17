@@ -1,4 +1,5 @@
 "use client";
+import TPLogo from "@/components/ui/tp-logo";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
@@ -152,16 +153,7 @@ export default function Navbar() {
 
             {/* ── Logo ──────────────────────────────────── */}
             <Link href="/" onClick={closeAll} className="flex items-center gap-2 shrink-0 group">
-              <div
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-all duration-300
-                  group-hover:-translate-y-0.5 group-active:translate-y-0 group-active:scale-95"
-                style={{
-                  background: "linear-gradient(135deg,#f59e0b 0%,#d97706 50%,#b45309 100%)",
-                  boxShadow: "0 4px 12px rgba(217,119,6,0.4), inset 0 1px 0 rgba(255,255,255,0.25)",
-                }}
-              >
-                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
-              </div>
+              <TPLogo size={34} className="transition-all duration-300 group-hover:-translate-y-0.5 group-active:translate-y-0 group-active:scale-95" />
               <span className="font-bold text-lg sm:text-xl text-gray-900 hidden sm:block tracking-tight">
                 TechPro<span className="text-amber-600">wexa</span>
               </span>

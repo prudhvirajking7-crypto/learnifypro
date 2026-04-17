@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TPLogo from "@/components/ui/tp-logo";
 
 // Social icon SVGs (lucide v1+ removed these)
 const SocialIcons = [
@@ -17,9 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                <span className="font-black text-white text-xs leading-none tracking-tight">TP</span>
-              </div>
+              <TPLogo size={32} />
               <span className="font-bold text-xl text-white">
                 TechPro<span className="text-amber-400">wexa</span>
               </span>
