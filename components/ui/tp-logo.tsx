@@ -58,17 +58,13 @@ export default function TPLogo({ size = 32, className = "", shadow = true }: TPL
         <line x1="88" y1="19" x2="88" y2="36" stroke="#b45309" strokeWidth="3" strokeLinecap="round" />
         <rect x="84" y="35" width="9" height="11" rx="3.5" fill="#b45309" />
 
-        {/* ── lowercase t ── */}
-        {/* stem — full height */}
-        <rect x="27" y="55" width="9" height="48" rx="4.5" fill="white" />
-        {/* crossbar at x-height (not at top — key difference from uppercase T) */}
-        <rect x="18" y="68" width="18" height="9" rx="4.5" fill="white" />
+        {/* ── T ── */}
+        <rect x="13" y="52" width="38" height="12" rx="6" fill="white" />
+        <rect x="26" y="52" width="12" height="54" rx="6" fill="white" />
 
-        {/* ── lowercase p ── */}
-        {/* stem — full height */}
-        <rect x="62" y="55" width="9" height="48" rx="4.5" fill="white" />
-        {/* bowl at top: chord=22, r=11, semicircle, rightmost=82 */}
-        <path d="M 71 55 A 11 11 0 0 1 71 77 Z" fill="white" />
+        {/* ── P ── */}
+        <rect x="60" y="52" width="12" height="54" rx="6" fill="white" />
+        <path d="M 72 52 A 13 13 0 0 1 72 78 Z" fill="white" />
       </svg>
     </div>
   );
