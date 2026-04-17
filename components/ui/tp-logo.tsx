@@ -4,60 +4,68 @@ interface TPLogoProps {
   shadow?: boolean;
 }
 
+/**
+ * TechProwexa logo mark — amber rounded square with bold TP letterforms
+ * and a graduation cap sitting on top, matching the brand identity.
+ */
 export default function TPLogo({ size = 32, className = "", shadow = true }: TPLogoProps) {
-  const radius = Math.round(size * 0.26);
+  const h = Math.round(size * 1.18);
 
   return (
     <div
       className={className}
       style={{
         width: size,
-        height: size,
-        borderRadius: radius,
-        background: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 30%, #d97706 65%, #c2410c 100%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        height: h,
         flexShrink: 0,
-        boxShadow: shadow
-          ? "0 4px 14px rgba(217,119,6,0.5), inset 0 1px 0 rgba(255,255,255,0.28)"
-          : "none",
-        position: "relative",
-        overflow: "hidden",
+        display: "inline-flex",
+        filter: shadow
+          ? "drop-shadow(0 4px 8px rgba(180,83,9,0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.18))"
+          : undefined,
       }}
     >
-      {/* Top-left radial highlight */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse at 35% 25%, rgba(255,255,255,0.30) 0%, transparent 58%)",
-          pointerEvents: "none",
-        }}
-      />
+      <svg width={size} height={h} viewBox="0 0 100 118" fill="none">
+        <defs>
+          <linearGradient
+            id="tplogo-bg"
+            x1="3" y1="28" x2="97" y2="115"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%"   stopColor="#fbbf24" />
+            <stop offset="40%"  stopColor="#f59e0b" />
+            <stop offset="75%"  stopColor="#d97706" />
+            <stop offset="100%" stopColor="#c2410c" />
+          </linearGradient>
+          <radialGradient id="tplogo-hl" cx="38%" cy="28%" r="65%">
+            <stop offset="0%"   stopColor="white" stopOpacity="0.28" />
+            <stop offset="100%" stopColor="white" stopOpacity="0"    />
+          </radialGradient>
+        </defs>
 
-      {/* TP lettermark */}
-      <svg
-        width={Math.round(size * 0.64)}
-        height={Math.round(size * 0.59)}
-        viewBox="0 0 20 18"
-        fill="none"
-        style={{ position: "relative", zIndex: 1 }}
-      >
-        {/* T — crossbar */}
-        <rect x="0.5" y="0" width="9" height="3" rx="1.5" fill="white" />
-        {/* T — stem centred on crossbar */}
-        <rect x="3.5" y="0" width="3" height="18" rx="1.5" fill="white" />
+        {/* ── Main rounded badge ── */}
+        <rect x="3" y="28" width="94" height="87" rx="20" fill="url(#tplogo-bg)" />
+        <rect x="3" y="28" width="94" height="87" rx="20" fill="url(#tplogo-hl)" />
 
-        {/* P — stem */}
-        <rect x="11.5" y="0" width="3" height="18" rx="1.5" fill="white" />
-        {/*
-          P — bowl: semicircle D-shape.
-          chord = 9, radius = 4.5 → perfect semicircle.
-          Rightmost point = 14.5 + 4.5 = 19.
-        */}
-        <path d="M 14.5 0 A 4.5 4.5 0 0 1 14.5 9 Z" fill="white" />
+        {/* ── Graduation cap body (cylinder) ── */}
+        <path d="M 30 21 L 70 21 L 70 34 Q 70 41 50 41 Q 30 41 30 34 Z" fill="#d97706" />
+        <ellipse cx="50" cy="21" rx="20" ry="5.5" fill="#e88515" />
+
+        {/* ── Mortarboard (diamond board) ── */}
+        <polygon points="50,3 88,19 50,29 12,19" fill="#f97316" />
+        <polygon points="50,3 88,19 62,14 26,14" fill="rgba(255,240,100,0.22)" />
+
+        {/* ── Tassel ── */}
+        <line x1="88" y1="19" x2="88" y2="36" stroke="#b45309" strokeWidth="3" strokeLinecap="round" />
+        <rect x="84" y="35" width="9" height="11" rx="3.5" fill="#b45309" />
+
+        {/* ── T letterform ── */}
+        <rect x="13" y="52" width="38" height="12" rx="6" fill="white" />
+        <rect x="26" y="52" width="12" height="54" rx="6" fill="white" />
+
+        {/* ── P letterform ── */}
+        <rect x="60" y="52" width="12" height="54" rx="6" fill="white" />
+        {/* Bowl: chord=26, r=13, semicircle, rightmost=85 */}
+        <path d="M 72 52 A 13 13 0 0 1 72 78 Z" fill="white" />
       </svg>
     </div>
   );
