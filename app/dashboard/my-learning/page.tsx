@@ -33,7 +33,7 @@ export default async function MyLearningPage() {
             <h1 className="text-2xl font-bold text-gray-900">My Learning</h1>
             <p className="text-gray-500 mt-1">{enrollments.length} courses enrolled</p>
           </div>
-          <Link href="/courses" className="px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-xl hover:bg-purple-700 transition-colors">
+          <Link href="/courses" className="px-4 py-2 bg-amber-600 text-white text-sm font-semibold rounded-xl hover:bg-amber-700 transition-colors">
             Browse More Courses
           </Link>
         </div>
@@ -43,7 +43,7 @@ export default async function MyLearningPage() {
             <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">No courses yet</h3>
             <p className="text-gray-500 mb-6">Enroll in your first course to start learning</p>
-            <Link href="/courses" className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors">
+            <Link href="/courses" className="px-6 py-3 bg-amber-600 text-white font-semibold rounded-xl hover:bg-amber-700 transition-colors">
               Browse Courses
             </Link>
           </div>
@@ -57,12 +57,12 @@ export default async function MyLearningPage() {
 
               return (
                 <div key={enrollment.id} className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video bg-gradient-to-br from-purple-100 to-indigo-100 relative overflow-hidden">
+                  <div className="aspect-video bg-gradient-to-br from-amber-100 to-amber-100 relative overflow-hidden">
                     {enrollment.course.thumbnail ? (
                       <img src={enrollment.course.thumbnail} alt={enrollment.course.title} className="w-full h-full object-cover" />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <BookOpen className="w-10 h-10 text-purple-300" />
+                        <BookOpen className="w-10 h-10 text-amber-300" />
                       </div>
                     )}
                     {isCompleted && (
@@ -76,7 +76,7 @@ export default async function MyLearningPage() {
                     <p className="text-xs text-gray-500 mb-3">{enrollment.course.instructor.name}</p>
                     <div className="h-1.5 bg-gray-100 rounded-full mb-2">
                       <div
-                        className={`h-full rounded-full transition-all ${isCompleted ? "bg-green-500" : "bg-gradient-to-r from-purple-500 to-indigo-500"}`}
+                        className={`h-full rounded-full transition-all ${isCompleted ? "bg-green-500" : "bg-gradient-to-r from-amber-500 to-amber-500"}`}
                         style={{ width: `${percent}%` }}
                       />
                     </div>
@@ -86,7 +86,7 @@ export default async function MyLearningPage() {
                     </div>
                     <Link
                       href={`/courses/${enrollment.course.slug}/learn`}
-                      className="w-full flex items-center justify-center gap-2 py-2 bg-purple-600 text-white text-sm font-semibold rounded-xl hover:bg-purple-700 transition-colors"
+                      className="w-full flex items-center justify-center gap-2 py-2 bg-amber-600 text-white text-sm font-semibold rounded-xl hover:bg-amber-700 transition-colors"
                     >
                       <Play className="w-3.5 h-3.5" />
                       {percent === 0 ? "Start" : isCompleted ? "Review" : "Continue"}

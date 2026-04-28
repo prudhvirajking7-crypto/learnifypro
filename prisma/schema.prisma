@@ -69,6 +69,7 @@ model OtpToken {
   userId    String
   email     String
   token     String
+  type      String   @default("REGISTER")
   expires   DateTime
   used      Boolean  @default(false)
   createdAt DateTime @default(now())
@@ -132,17 +133,20 @@ model Section {
 }
 
 model Lecture {
-  id          String      @id @default(cuid())
-  title       String
-  description String?     @db.Text
-  videoUrl    String?
-  duration    Int         @default(0)
-  order       Int
-  isFree      Boolean     @default(false)
-  type        LectureType @default(VIDEO)
-  resources   String[]
-  sectionId   String
-  createdAt   DateTime    @default(now())
+  id              String      @id @default(cuid())
+  title           String
+  description     String?     @db.Text
+  videoUrl        String?
+  videoPlatformId String?
+  videoPlatform   String?
+  videoStatus     String?     @default("ready")
+  duration        Int         @default(0)
+  order           Int
+  isFree          Boolean     @default(false)
+  type            LectureType @default(VIDEO)
+  resources       String[]
+  sectionId       String
+  createdAt       DateTime    @default(now())
 
   section   Section    @relation(fields: [sectionId], references: [id], onDelete: Cascade)
   progress  Progress[]
@@ -260,6 +264,7 @@ enum EnrollmentStatus {
   ACTIVE
   COMPLETED
   REFUNDED
+  BLOCKED
 }
 
 enum OrderStatus {
@@ -267,4 +272,38 @@ enum OrderStatus {
   COMPLETED
   FAILED
   REFUNDED
+}
+
+model JobPost {
+  id           String   @id @default(cuid())
+  title        String
+  department   String
+  location     String   @default("Remote")
+  type         String   @default("Full-time")
+  description  String   @db.Text
+  requirements String[]
+  salary       String?
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Partner {
+  id        String   @id @default(cuid())
+  name      String
+  logo      String?
+  website   String?
+  active    Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String   @db.Text
+  label     String
+  type      String   @default("text")
+  updatedAt DateTime @updatedAt
 }

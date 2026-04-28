@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="surface" x1="22" y1="14" x2="90" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF9A3D"/>
+      <stop offset="45%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#D95F08"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="31%" cy="19%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="16" y="16" width="80" height="80" rx="22" fill="#9A3412" opacity="0.16"/>
+  <rect x="14" y="10" width="84" height="84" rx="22" fill="url(#surface)"/>
+  <rect x="16" y="12" width="80" height="80" rx="20" fill="url(#glow)"/>
+  <path d="M24 19C28 15.5 34 14 43 14H69C83 14 91 22 91 36V41C78 35 62 32 45 34C34 35.3 26 32.8 22 27.8C21.5 24.5 22.2 21.6 24 19Z" fill="#FFFFFF" opacity="0.08"/>
+  <text x="56" y="62" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="'Trebuchet MS', Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="-3">tp</text>
+</svg>

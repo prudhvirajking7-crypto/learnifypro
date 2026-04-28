@@ -1,4 +1,4 @@
-# LearnifyPro — Deployment Guide
+# TechProwexa — Deployment Guide
 
 ## Prerequisites
 - cPanel hosting with **Node.js** support (LiteSpeed or Apache + mod_proxy)
@@ -26,7 +26,7 @@
 ```bash
 # In cPanel Terminal (SSH):
 cd public_html   # or your desired directory
-git clone https://github.com/yourusername/learnifypro.git .
+git clone https://github.com/yourusername/techprowexa.git .
 ```
 
 ### Option B: Via File Manager
@@ -146,8 +146,8 @@ npx prisma migrate deploy
 
 | Role       | Email                              | Password         |
 |------------|------------------------------------|------------------|
-| Admin      | admin@learnifypro.com              | Admin@123        |
-| Instructor | john.smith@learnifypro.com         | Instructor@123   |
+| Admin      | admin@techprowexa.com              | Admin@123        |
+| Instructor | john.smith@techprowexa.com         | Instructor@123   |
 
 > **Change these passwords immediately after first login!**
 

@@ -86,7 +86,7 @@ export default function ProfilePage() {
 
   if (loading) return (
     <div className="min-h-screen pt-20 flex items-center justify-center">
-      <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin" />
+      <div className="w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full animate-spin" />
     </div>
   );
 
@@ -108,14 +108,14 @@ export default function ProfilePage() {
             <div className="bg-white rounded-2xl border border-gray-100 p-6 text-center">
               <div className="relative inline-block mb-4">
                 {profile?.image ? (
-                  <img src={profile.image} alt={name} className="w-24 h-24 rounded-full object-cover border-4 border-purple-100" />
+                  <img src={profile.image} alt={name} className="w-24 h-24 rounded-full object-cover border-4 border-amber-100" />
                 ) : (
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-white text-3xl font-bold mx-auto">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-500 to-amber-500 flex items-center justify-center text-white text-3xl font-bold mx-auto">
                     {initials}
                   </div>
                 )}
                 {profile?.image && (
-                  <div className="absolute bottom-0 right-0 w-7 h-7 bg-purple-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-purple-700">
+                  <div className="absolute bottom-0 right-0 w-7 h-7 bg-amber-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-amber-700">
                     <Camera className="w-3.5 h-3.5 text-white" />
                   </div>
                 )}
@@ -125,7 +125,7 @@ export default function ProfilePage() {
               <span className={`inline-block mt-2 px-3 py-1 rounded-full text-xs font-semibold ${
                 profile?.role === "ADMIN" ? "bg-red-100 text-red-700" :
                 profile?.role === "INSTRUCTOR" ? "bg-blue-100 text-blue-700" :
-                "bg-purple-100 text-purple-700"
+                "bg-amber-100 text-amber-700"
               }`}>
                 {profile?.role}
               </span>
@@ -135,8 +135,8 @@ export default function ProfilePage() {
             <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
               <h3 className="font-semibold text-gray-900 text-sm">Account Stats</h3>
               <div className="flex items-center gap-3 text-sm">
-                <div className="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center">
-                  <BookOpen className="w-4 h-4 text-purple-600" />
+                <div className="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
+                  <BookOpen className="w-4 h-4 text-amber-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">{profile?._count?.enrollments ?? 0}</p>
@@ -174,7 +174,7 @@ export default function ProfilePage() {
             {/* Personal Info */}
             <div className="bg-white rounded-2xl border border-gray-100 p-6">
               <h3 className="font-bold text-gray-900 mb-5 flex items-center gap-2">
-                <User className="w-4 h-4 text-purple-600" /> Personal Information
+                <User className="w-4 h-4 text-amber-600" /> Personal Information
               </h3>
               <div className="space-y-4">
                 <div>
@@ -183,7 +183,7 @@ export default function ProfilePage() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
                     placeholder="Your full name"
                   />
                 </div>
@@ -209,7 +209,7 @@ export default function ProfilePage() {
                     onChange={(e) => setBio(e.target.value)}
                     rows={3}
                     maxLength={300}
-                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm resize-none"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm resize-none"
                     placeholder="Tell us a little about yourself..."
                   />
                   <p className="text-xs text-gray-400 mt-1 text-right">{bio.length}/300</p>
@@ -217,7 +217,7 @@ export default function ProfilePage() {
                 <button
                   onClick={handleSaveProfile}
                   disabled={saving}
-                  className="flex items-center gap-2 px-6 py-2.5 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors disabled:opacity-50 text-sm"
+                  className="flex items-center gap-2 px-6 py-2.5 bg-amber-600 text-white font-semibold rounded-xl hover:bg-amber-700 transition-colors disabled:opacity-50 text-sm"
                 >
                   <Save className="w-4 h-4" />
                   {saving ? "Saving..." : "Save Changes"}
@@ -229,7 +229,7 @@ export default function ProfilePage() {
             {profile?.hasPassword && (
               <div className="bg-white rounded-2xl border border-gray-100 p-6">
                 <h3 className="font-bold text-gray-900 mb-5 flex items-center gap-2">
-                  <Lock className="w-4 h-4 text-purple-600" /> Change Password
+                  <Lock className="w-4 h-4 text-amber-600" /> Change Password
                 </h3>
                 <div className="space-y-4">
                   <div>
@@ -239,7 +239,7 @@ export default function ProfilePage() {
                         type={showCurrent ? "text" : "password"}
                         value={currentPassword}
                         onChange={(e) => setCurrentPassword(e.target.value)}
-                        className="w-full px-4 py-2.5 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
+                        className="w-full px-4 py-2.5 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
                         placeholder="Enter current password"
                       />
                       <button type="button" onClick={() => setShowCurrent(!showCurrent)}
@@ -255,7 +255,7 @@ export default function ProfilePage() {
                         type={showNew ? "text" : "password"}
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
-                        className="w-full px-4 py-2.5 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
+                        className="w-full px-4 py-2.5 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
                         placeholder="Min 8 characters"
                       />
                       <button type="button" onClick={() => setShowNew(!showNew)}
@@ -270,7 +270,7 @@ export default function ProfilePage() {
                       type="password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className={`w-full px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm ${
+                      className={`w-full px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm ${
                         confirmPassword && confirmPassword !== newPassword
                           ? "border-red-300 bg-red-50"
                           : "border-gray-200"

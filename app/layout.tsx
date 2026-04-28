@@ -1,22 +1,36 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import SessionProvider from "@/components/providers/session-provider";
+import ConditionalLayout from "@/components/providers/conditional-layout";
+import SessionGuard from "@/components/providers/session-guard";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = localFont({
+  src: "../app/fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+  display: "swap",
+});
+
+const geistMono = localFont({
+  src: "../app/fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "LearnifyPro - World Class Learning Platform",
-  description: "Learn from industry experts. 1000+ courses in web development, data science, design, business and more. Start learning today.",
-  keywords: "online learning, courses, education, web development, data science",
+  title: "TechProwexa | Career-Focused Learning Platform",
+  description: "TechProwexa helps ambitious learners build job-ready skills with expert-led courses, real projects, and flexible learning paths.",
+  keywords: "TechProwexa, online learning, career education, web development, data science, project based learning",
   openGraph: {
-    title: "LearnifyPro - World Class Learning Platform",
-    description: "Learn from industry experts. Start your learning journey today.",
+    title: "TechProwexa | Career-Focused Learning Platform",
+    description: "Build practical skills with expert-led courses, project-based training, and a platform designed for real career outcomes.",
     type: "website",
   },
 };
@@ -26,11 +40,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <SessionProvider session={session}>
-          <Navbar />
+          <SessionGuard />
+          <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
           {children}
-          <Footer />
+          </ConditionalLayout>
           <Toaster
             position="top-right"
             toastOptions={{
@@ -42,7 +57,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 padding: "12px 16px",
                 fontSize: "14px",
               },
-              success: { iconTheme: { primary: "#7c3aed", secondary: "#fff" } },
+              success: { iconTheme: { primary: "#d97706", secondary: "#fff" } },
             }}
           />
         </SessionProvider>

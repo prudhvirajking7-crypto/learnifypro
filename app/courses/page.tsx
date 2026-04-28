@@ -66,12 +66,12 @@ export default async function CoursesPage({ searchParams }: { searchParams: any 
   return (
     <main className="min-h-screen bg-gray-50 pt-20">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-700 to-indigo-700 py-12">
+      <div className="bg-gradient-to-r from-amber-700 to-yellow-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h1 className="text-3xl font-bold text-white mb-2">
             {searchParams.search ? `Results for "${searchParams.search}"` : searchParams.category ? decodeURIComponent(searchParams.category).replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase()) : "All Courses"}
           </h1>
-          <p className="text-purple-200">{pagination?.total || 0} courses available</p>
+          <p className="text-amber-200">{pagination?.total || 0} courses available</p>
         </div>
       </div>
 
@@ -107,8 +107,8 @@ export default async function CoursesPage({ searchParams }: { searchParams: any 
                         href={`?${new URLSearchParams({ ...searchParams, page: page.toString() })}`}
                         className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-medium transition-all ${
                           page === pagination.page
-                            ? "bg-purple-600 text-white"
-                            : "bg-white border border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600"
+                            ? "bg-amber-600 text-white"
+                            : "bg-white border border-gray-200 text-gray-700 hover:border-amber-300 hover:text-amber-600"
                         }`}
                       >
                         {page}
