@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 
+export const mailFrom = process.env.SMTP_FROM || `TechProwexa <${process.env.SMTP_USER}>`;
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,
@@ -12,7 +14,7 @@ const transporter = nodemailer.createTransport({
 
 export async function sendOTPEmail(email: string, otp: string, name?: string) {
   const mailOptions = {
-    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: mailFrom,
     to: email,
     subject: "Verify your email - TechProwexa",
     html: `
@@ -71,7 +73,7 @@ export async function sendOTPEmail(email: string, otp: string, name?: string) {
 
 export async function sendPasswordResetEmail(email: string, otp: string, name?: string) {
   const mailOptions = {
-    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: mailFrom,
     to: email,
     subject: "Reset your password - TechProwexa",
     html: `
@@ -123,7 +125,7 @@ export async function sendPasswordResetEmail(email: string, otp: string, name?: 
 
 export async function sendWelcomeEmail(email: string, name: string) {
   const mailOptions = {
-    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: mailFrom,
     to: email,
     subject: "Welcome to TechProwexa! 🎉",
     html: `
@@ -170,7 +172,7 @@ export async function sendOrderConfirmationEmail(
   orderDetails: { courses: string[]; total: number; orderId: string }
 ) {
   const mailOptions = {
-    from: `"TechProwexa" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: mailFrom,
     to: email,
     subject: `Order Confirmed #${orderDetails.orderId} - TechProwexa`,
     html: `

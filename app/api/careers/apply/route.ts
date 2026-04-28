@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { mailFrom } from "@/lib/email";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -37,7 +38,7 @@ export async function POST(req: NextRequest) {
     }
 
     await transporter.sendMail({
-      from: `"TechProwexa Careers" <${process.env.SMTP_USER}>`,
+      from: mailFrom,
       to: process.env.CAREERS_EMAIL || process.env.SMTP_USER,
       subject: `New Job Application: ${jobTitle} — ${name}`,
       html: `
