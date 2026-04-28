@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
+import { withDbRetry } from "@/lib/db-retry";
 import { generateOTP } from "@/lib/utils";
 import { sendOTPEmail } from "@/lib/email";
 import { z } from "zod";
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
 
     const { name, email, password } = validation.data;
 
-    const existingUser = await prisma.user.findUnique({ where: { email } });
+    const existingUser = await withDbRetry(() => prisma.user.findUnique({ where: { email } }));
 
     if (existingUser) {
       if (existingUser.emailVerified) {
@@ -40,17 +41,16 @@ export async function POST(req: NextRequest) {
       }
       // Re-send OTP and update password for unverified account
       const hashedPassword = await bcrypt.hash(password, 12);
-      await prisma.user.update({
-        where: { id: existingUser.id },
-        data: { name, password: hashedPassword },
-      });
-      await prisma.otpToken.deleteMany({ where: { userId: existingUser.id } });
       const otp = generateOTP();
       const expires = new Date(Date.now() + 10 * 60 * 1000);
 
-      await prisma.otpToken.create({
-        data: { userId: existingUser.id, email, token: otp, expires },
-      });
+      await withDbRetry(() =>
+        prisma.$transaction([
+          prisma.user.update({ where: { id: existingUser.id }, data: { name, password: hashedPassword } }),
+          prisma.otpToken.deleteMany({ where: { userId: existingUser.id } }),
+          prisma.otpToken.create({ data: { userId: existingUser.id, email, token: otp, expires } }),
+        ])
+      );
 
       await sendOTPEmail(email, otp, name);
 
@@ -61,21 +61,16 @@ export async function POST(req: NextRequest) {
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
-
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: hashedPassword,
-      },
-    });
-
     const otp = generateOTP();
     const expires = new Date(Date.now() + 10 * 60 * 1000);
 
-    await prisma.otpToken.create({
-      data: { userId: user.id, email, token: otp, expires },
-    });
+    const user = await withDbRetry(() =>
+      prisma.$transaction(async (tx) => {
+        const created = await tx.user.create({ data: { name, email, password: hashedPassword } });
+        await tx.otpToken.create({ data: { userId: created.id, email, token: otp, expires } });
+        return created;
+      })
+    );
 
     await sendOTPEmail(email, otp, name);
 

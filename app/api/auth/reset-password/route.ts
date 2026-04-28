@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { withDbRetry } from "@/lib/db-retry";
 import bcrypt from "bcryptjs";
 
 export async function POST(req: NextRequest) {
@@ -14,9 +15,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Password must be at least 8 characters" }, { status: 400 });
     }
 
-    const otpToken = await prisma.otpToken.findFirst({
-      where: { userId, token: otp, type: "RESET", used: false, expires: { gt: new Date() } },
-    });
+    const otpToken = await withDbRetry(() =>
+      prisma.otpToken.findFirst({
+        where: { userId, token: otp, type: "RESET", used: false, expires: { gt: new Date() } },
+      })
+    );
 
     if (!otpToken) {
       return NextResponse.json({ error: "Invalid or expired code. Please request a new one." }, { status: 400 });
@@ -24,10 +27,12 @@ export async function POST(req: NextRequest) {
 
     const hashedPassword = await bcrypt.hash(newPassword, 12);
 
-    await prisma.$transaction([
-      prisma.user.update({ where: { id: userId }, data: { password: hashedPassword } }),
-      prisma.otpToken.update({ where: { id: otpToken.id }, data: { used: true } }),
-    ]);
+    await withDbRetry(() =>
+      prisma.$transaction([
+        prisma.user.update({ where: { id: userId }, data: { password: hashedPassword } }),
+        prisma.otpToken.update({ where: { id: otpToken.id }, data: { used: true } }),
+      ])
+    );
 
     return NextResponse.json({ message: "Password reset successfully!" });
   } catch (error) {

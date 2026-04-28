@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { withDbRetry } from "@/lib/db-retry";
 import { generateOTP } from "@/lib/utils";
 import { sendPasswordResetEmail } from "@/lib/email";
 
@@ -10,21 +11,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
-    const user = await prisma.user.findUnique({ where: { email } });
+    const user = await withDbRetry(() => prisma.user.findUnique({ where: { email } }));
 
     // Always return success to prevent email enumeration
     if (!user || !user.emailVerified || !user.password) {
       return NextResponse.json({ message: "If this email exists, a reset code has been sent." });
     }
 
-    await prisma.otpToken.deleteMany({ where: { userId: user.id, type: "RESET" } });
-
     const otp = generateOTP();
     const expires = new Date(Date.now() + 10 * 60 * 1000);
 
-    await prisma.otpToken.create({
-      data: { userId: user.id, email, token: otp, type: "RESET", expires },
-    });
+    await withDbRetry(() =>
+      prisma.$transaction([
+        prisma.otpToken.deleteMany({ where: { userId: user.id, type: "RESET" } }),
+        prisma.otpToken.create({
+          data: { userId: user.id, email, token: otp, type: "RESET", expires },
+        }),
+      ])
+    );
 
     await sendPasswordResetEmail(email, otp, user.name || "User");
 

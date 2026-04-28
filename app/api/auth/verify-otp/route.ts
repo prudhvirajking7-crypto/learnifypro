@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { withDbRetry } from "@/lib/db-retry";
 import { sendWelcomeEmail } from "@/lib/email";
 import { z } from "zod";
 
@@ -22,14 +23,11 @@ export async function POST(req: NextRequest) {
 
     const { userId, otp } = validation.data;
 
-    const otpToken = await prisma.otpToken.findFirst({
-      where: {
-        userId,
-        token: otp,
-        used: false,
-        expires: { gt: new Date() },
-      },
-    });
+    const otpToken = await withDbRetry(() =>
+      prisma.otpToken.findFirst({
+        where: { userId, token: otp, used: false, expires: { gt: new Date() } },
+      })
+    );
 
     if (!otpToken) {
       return NextResponse.json(
@@ -38,18 +36,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    await prisma.$transaction([
-      prisma.user.update({
-        where: { id: userId },
-        data: { emailVerified: new Date() },
-      }),
-      prisma.otpToken.update({
-        where: { id: otpToken.id },
-        data: { used: true },
-      }),
-    ]);
-
-    const user = await prisma.user.findUnique({ where: { id: userId } });
+    const user = await withDbRetry(() =>
+      prisma.$transaction(async (tx) => {
+        await tx.user.update({ where: { id: userId }, data: { emailVerified: new Date() } });
+        await tx.otpToken.update({ where: { id: otpToken.id }, data: { used: true } });
+        return tx.user.findUnique({ where: { id: userId } });
+      })
+    );
     if (user?.email && user?.name) {
       await sendWelcomeEmail(user.email, user.name).catch(console.error);
     }
