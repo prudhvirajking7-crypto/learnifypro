@@ -19,47 +19,38 @@ export default function TPLogo({ size = 32, className = "", shadow = true }: TPL
         flexShrink: 0,
         display: "inline-flex",
         filter: shadow
-          ? "drop-shadow(0 8px 16px rgba(217,119,6,0.32)) drop-shadow(0 2px 5px rgba(15,23,42,0.18))"
+          ? "drop-shadow(0 10px 18px rgba(234,88,12,0.28)) drop-shadow(0 2px 5px rgba(15,23,42,0.16))"
           : undefined,
       }}
     >
       <svg width={size} height={size} viewBox="0 0 112 112" fill="none" aria-hidden="true">
         <defs>
-          <linearGradient id="tplogo-surface" x1="12" y1="10" x2="102" y2="104" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#FB923C" />
-            <stop offset="42%" stopColor="#F97316" />
-            <stop offset="75%" stopColor="#D97706" />
-            <stop offset="100%" stopColor="#C2410C" />
+          <linearGradient id="tplogo-surface" x1="22" y1="14" x2="90" y2="96" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FF9A3D" />
+            <stop offset="45%" stopColor="#F97316" />
+            <stop offset="100%" stopColor="#D95F08" />
           </linearGradient>
-          <linearGradient id="tplogo-stroke" x1="16" y1="16" x2="96" y2="96" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.85)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.15)" />
-          </linearGradient>
-          <radialGradient id="tplogo-glow" cx="34%" cy="18%" r="72%">
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.42" />
+          <radialGradient id="tplogo-glow" cx="31%" cy="19%" r="70%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.32" />
             <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="tplogo-core" x1="30" y1="28" x2="86" y2="84" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="#FFF7ED" />
-          </linearGradient>
         </defs>
 
-        <rect x="8" y="8" width="96" height="96" rx="28" fill="#0F172A" opacity="0.08" />
-        <rect x="8" y="6" width="96" height="96" rx="28" fill="url(#tplogo-surface)" />
-        <rect x="8.75" y="6.75" width="94.5" height="94.5" rx="27.25" stroke="url(#tplogo-stroke)" strokeOpacity="0.45" strokeWidth="1.5" />
-        <rect x="16" y="14" width="80" height="80" rx="22" fill="url(#tplogo-glow)" />
+        <rect x="16" y="16" width="80" height="80" rx="22" fill="#9A3412" opacity="0.16" />
+        <rect x="14" y="10" width="84" height="84" rx="22" fill="url(#tplogo-surface)" />
+        <rect x="16" y="12" width="80" height="80" rx="20" fill="url(#tplogo-glow)" />
+        <path d="M24 19C28 15.5 34 14 43 14H69C83 14 91 22 91 36V41C78 35 62 32 45 34C34 35.3 26 32.8 22 27.8C21.5 24.5 22.2 21.6 24 19Z" fill="#FFFFFF" opacity="0.08" />
 
         <text
           x="56"
-          y="68"
+          y="62"
           textAnchor="middle"
           dominantBaseline="middle"
-          fill="url(#tplogo-core)"
-          fontFamily="Arial, Helvetica, sans-serif"
-          fontSize="46"
+          fill="#FFFFFF"
+          fontFamily="'Trebuchet MS', Arial, Helvetica, sans-serif"
+          fontSize="38"
           fontWeight="900"
-          letterSpacing="-4"
+          letterSpacing="-3"
         >
           tp
         </text>
