@@ -77,6 +77,9 @@ RAZORPAY_KEY_SECRET=your-secret
 NEXT_PUBLIC_RAZORPAY_KEY_ID=rzp_test_...
 ```
 
+Keep `SMTP_PASS` in `.env.local` for local development and in Vercel Environment
+Variables for deployed builds. Do not commit the live mailbox password.
+
 ### 3. Set Up Database
 
 ```bash
