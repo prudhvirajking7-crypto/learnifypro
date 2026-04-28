@@ -198,10 +198,10 @@ export default function InvestorsPage() {
             We are open to conversations with mission-aligned investors — angels, family offices, and early-stage funds who believe in the future of career education.
           </p>
           <a
-            href="mailto:investors@learnifypro.com"
+            href="mailto:investors@techprowexa.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl text-lg"
           >
-            investors@learnifypro.com
+            investors@techprowexa.com
           </a>
           <p className="text-amber-300 text-sm mt-5">We review all inquiries and respond within 3 business days.</p>
         </div>

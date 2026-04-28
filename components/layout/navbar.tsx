@@ -1,5 +1,5 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
+import BrandLockup from "@/components/ui/brand-lockup";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
@@ -153,10 +153,7 @@ export default function Navbar() {
 
             {/* ── Logo ──────────────────────────────────── */}
             <Link href="/" onClick={closeAll} className="flex items-center gap-2 shrink-0 group">
-              <TPLogo size={34} className="transition-all duration-300 group-hover:-translate-y-0.5 group-active:translate-y-0 group-active:scale-95" />
-              <span className="font-bold text-lg sm:text-xl text-gray-900 hidden sm:block tracking-tight">
-                TechPro<span className="text-amber-600">wexa</span>
-              </span>
+              <BrandLockup size={34} compact className="transition-all duration-300 group-hover:-translate-y-0.5 group-active:translate-y-0 group-active:scale-95 [&>div:last-child]:hidden sm:[&>div:last-child]:block" />
             </Link>
 
             {/* ── Categories — hover open/close ─────────── */}

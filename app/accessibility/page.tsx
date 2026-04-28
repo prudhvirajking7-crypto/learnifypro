@@ -217,10 +217,10 @@ export default function AccessibilityPage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-5 text-left">
               <p className="text-amber-200 text-xs font-semibold uppercase tracking-widest mb-1">Email</p>
               <a
-                href="mailto:accessibility@learnifypro.com"
+                href="mailto:accessibility@techprowexa.com"
                 className="text-white font-semibold text-sm hover:text-amber-200 transition-colors"
               >
-                accessibility@learnifypro.com
+                accessibility@techprowexa.com
               </a>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-5 text-left">

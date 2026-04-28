@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TPLogo from "@/components/ui/tp-logo";
 import { Download, Mail, Newspaper, ExternalLink, Image, Type, Palette } from "lucide-react";
 
 const COVERAGE = [
@@ -38,8 +38,8 @@ const COVERAGE = [
 
 const BRAND_ASSETS = [
   { icon: Image, label: "Logo Files", desc: "SVG, PNG, and PDF in light and dark variants. Minimum clear space rules included." },
-  { icon: Type, label: "Typography", desc: "Primary typeface: Inter. Display typeface: Cal Sans. Usage guidelines inside the kit." },
-  { icon: Palette, label: "Colour Palette", desc: "Amber 600 (#D97706), Yellow 700 (#B45309), Slate 900 (#0F172A), and supporting neutrals." },
+  { icon: Type, label: "Typography", desc: "Primary typeface: Geist Sans. Technical accents use Geist Mono for code, data, and learning controls." },
+  { icon: Palette, label: "Colour Palette", desc: "Amber 600 (#D97706), Gold 400 (#FBBF24), Slate 950 (#020617), and supporting warm neutrals." },
 ];
 
 export default function PressPage() {
@@ -73,10 +73,10 @@ export default function PressPage() {
             <h2 className="text-2xl font-bold text-white mb-1">Need our assets?</h2>
             <p className="text-amber-200">Download our official media kit — logos, brand colours, team photos, and company boilerplate.</p>
           </div>
-          <button className="flex items-center gap-2 px-7 py-3.5 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl shrink-0">
+          <a href="/brand/techprowexa-tp-mark.svg" download className="flex items-center gap-2 px-7 py-3.5 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl shrink-0">
             <Download className="w-5 h-5" />
-            Download Media Kit
-          </button>
+            Download TP Mark
+          </a>
         </div>
       </section>
 
@@ -125,6 +125,18 @@ export default function PressPage() {
               Please use our official brand assets and follow these guidelines when referencing TechProwexa.
             </p>
           </div>
+          <div className="mb-10 grid gap-6 overflow-hidden rounded-2xl border border-amber-100 bg-gradient-to-br from-slate-950 via-stone-950 to-amber-950 p-6 sm:grid-cols-[220px_1fr] sm:items-center sm:p-8">
+            <div className="mx-auto flex h-44 w-44 items-center justify-center rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl shadow-black/20">
+              <TPLogo size={144} />
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-amber-300">Official Mark</p>
+              <h3 className="mb-3 text-2xl font-bold text-white">TechProwexa TP monogram</h3>
+              <p className="text-sm leading-relaxed text-amber-100/75">
+                Use this square mark for app icons, social avatars, press mentions, and compact brand placements where the full wordmark is too wide.
+              </p>
+            </div>
+          </div>
           <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {BRAND_ASSETS.map(({ icon: Icon, label, desc }) => (
               <div key={label} className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-7 border border-amber-100">
@@ -137,7 +149,7 @@ export default function PressPage() {
             ))}
           </div>
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-sm text-amber-800 leading-relaxed">
-            <strong>Usage Guidelines:</strong> Do not modify the logo, change its colours, or place it on backgrounds that reduce visibility. Always maintain the specified clear space. The &ldquo;TechProwexa&rdquo; name should always appear as one word with capital L and P. When in doubt, contact our press team before publishing.
+            <strong>Usage Guidelines:</strong> Do not modify the logo, change its colours, or place it on backgrounds that reduce visibility. Always maintain the specified clear space. The &ldquo;TechProwexa&rdquo; name should always appear as one word with capital T and P. When in doubt, contact our press team before publishing.
           </div>
         </div>
       </section>
@@ -151,10 +163,10 @@ export default function PressPage() {
             For press inquiries, interview requests, or fact-checking, reach our communications team directly.
           </p>
           <a
-            href="mailto:press@learnifypro.com"
+            href="mailto:press@techprowexa.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl text-lg"
           >
-            press@learnifypro.com
+            press@techprowexa.com
           </a>
           <p className="text-amber-300 text-sm mt-5">We aim to respond within 24 hours on business days.</p>
         </div>

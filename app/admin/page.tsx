@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { Users, BookOpen, TrendingUp, DollarSign, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { Users, BookOpen, TrendingUp, DollarSign } from "lucide-react";
 
 export default async function AdminDashboard() {
   const session = await getServerSession(authOptions);
@@ -40,10 +40,10 @@ export default async function AdminDashboard() {
   ];
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-5 p-4 sm:p-6">
       <div>
-        <h1 className="text-2xl font-bold text-amber-100">Dashboard</h1>
-        <p className="text-amber-200/50 text-sm mt-1">Welcome back, {session?.user?.name}. Here's what's happening.</p>
+        <h1 className="text-xl font-bold text-amber-100 sm:text-2xl">Dashboard</h1>
+        <p className="text-amber-200/50 text-sm mt-1">Welcome back, {session?.user?.name}. Here&apos;s what&apos;s happening.</p>
       </div>
 
       {/* Stats */}
@@ -51,7 +51,7 @@ export default async function AdminDashboard() {
         {stats.map(({ label, value, icon: Icon }) => (
           <div
             key={label}
-            className="rounded-2xl border border-amber-800/20 p-5"
+            className="rounded-2xl border border-amber-800/20 p-4 sm:p-5"
             style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(180,83,9,0.05) 100%)" }}
           >
             <div className="flex items-center justify-between mb-3">
@@ -60,7 +60,7 @@ export default async function AdminDashboard() {
                 <Icon className="w-5 h-5 text-amber-400" />
               </div>
             </div>
-            <p className="text-3xl font-bold text-amber-100">{value}</p>
+            <p className="text-2xl font-bold text-amber-100 sm:text-3xl">{value}</p>
           </div>
         ))}
       </div>
@@ -74,7 +74,7 @@ export default async function AdminDashboard() {
           </div>
           <div className="divide-y divide-amber-800/10">
             {recentEnrollments.map((e) => (
-              <div key={e.id} className="flex items-center gap-3 px-5 py-3">
+              <div key={e.id} className="flex items-center gap-3 px-4 py-3 sm:px-5">
                 {e.user.image ? (
                   <img src={e.user.image} className="w-8 h-8 rounded-full object-cover" alt="" />
                 ) : (
@@ -104,7 +104,7 @@ export default async function AdminDashboard() {
           </div>
           <div className="divide-y divide-amber-800/10">
             {courseStats.map((c) => (
-              <div key={c.id} className="flex items-center gap-3 px-5 py-3">
+              <div key={c.id} className="flex items-center gap-3 px-4 py-3 sm:px-5">
                 <div className="w-10 h-7 rounded-md bg-amber-900/30 overflow-hidden shrink-0">
                   {c.thumbnail ? <img src={c.thumbnail} className="w-full h-full object-cover" alt="" /> : <div className="w-full h-full bg-gradient-to-br from-amber-900 to-orange-900" />}
                 </div>
@@ -130,7 +130,7 @@ export default async function AdminDashboard() {
           <Link href="/admin/users" className="text-amber-400 text-xs hover:underline">View all</Link>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="min-w-[640px] w-full text-sm">
             <thead>
               <tr style={{ borderBottom: "1px solid rgba(245,158,11,0.08)" }}>
                 {["User", "Email", "Role", "Joined"].map((h) => (

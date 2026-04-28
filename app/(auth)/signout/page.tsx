@@ -1,5 +1,5 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
+import BrandLockup from "@/components/ui/brand-lockup";
 import { signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 
@@ -9,7 +9,7 @@ export default function SignOutPage() {
       <div className="text-center px-8 py-12 rounded-3xl border border-amber-800/30 max-w-sm w-full mx-4"
         style={{ background: "rgba(255,191,36,0.04)", backdropFilter: "blur(20px)" }}>
         <div className="flex justify-center mb-6">
-          <TPLogo size={64} />
+          <BrandLockup size={48} theme="light" showTagline />
         </div>
         <h1 className="text-2xl font-bold text-white mb-2">Sign Out</h1>
         <p className="text-amber-200/60 mb-8">Are you sure you want to sign out of TechProwexa?</p>

@@ -9,7 +9,6 @@ import {
   HelpCircle,
   MessageCircle,
   PlayCircle,
-  UserCircle,
 } from "lucide-react";
 
 const TOPICS = [
@@ -62,7 +61,7 @@ const FAQS = [
     id: "faq-2",
     question: "Can I access my courses on mobile?",
     answer:
-      "Yes. TechProwexa is fully responsive and works on any modern smartphone or tablet browser. Simply visit learnifypro.com from your mobile browser and log in. We are also working on native iOS and Android apps.",
+      "Yes. TechProwexa is fully responsive and works on any modern smartphone or tablet browser. Simply visit techprowexa.com from your mobile browser and log in. We are also working on native iOS and Android apps.",
   },
   {
     id: "faq-3",
@@ -86,7 +85,7 @@ const FAQS = [
     id: "faq-6",
     question: "What is your refund policy?",
     answer:
-      "We offer a 30-day money-back guarantee on all courses. If you're unsatisfied for any reason, contact support@learnifypro.com within 30 days of purchase with your order details. Refunds are processed to the original payment method within 5–7 business days.",
+      "We offer a 30-day money-back guarantee on all courses. If you're unsatisfied for any reason, contact support@techprowexa.com within 30 days of purchase with your order details. Refunds are processed to the original payment method within 5–7 business days.",
   },
 ];
 
@@ -141,7 +140,7 @@ export default function HelpPage() {
                 href={href}
                 className="bg-white rounded-2xl p-7 border border-amber-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group block"
               >
-                <div className="w-13 h-13 w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mb-5 group-hover:from-amber-200 group-hover:to-yellow-200 transition-colors">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mb-5 group-hover:from-amber-200 group-hover:to-yellow-200 transition-colors">
                   <Icon className="w-6 h-6 text-amber-600" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
@@ -199,7 +198,7 @@ export default function HelpPage() {
               Contact Support
             </Link>
             <a
-              href="mailto:support@learnifypro.com"
+              href="mailto:support@techprowexa.com"
               className="px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all"
             >
               Email Us Directly

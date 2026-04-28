@@ -1,5 +1,5 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
+import BrandLockup from "@/components/ui/brand-lockup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -86,9 +86,9 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-br from-amber-50 via-white to-yellow-50 overflow-hidden">
+    <div className="min-h-dvh flex flex-col bg-gradient-to-br from-amber-50 via-white to-yellow-50">
       {/* Top nav strip */}
-      <div className="flex items-center justify-between px-6 sm:px-10 py-3 shrink-0">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-10 shrink-0">
         <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-amber-600 transition-colors group">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
           Back to Home
@@ -100,13 +100,12 @@ export default function RegisterPage() {
       </div>
 
       {/* Centered content */}
-      <div className="flex-1 flex items-center justify-center px-4 overflow-y-auto py-2">
+      <div className="flex-1 flex items-center justify-center px-4 py-6">
         <div className="w-full max-w-sm">
           {/* Logo */}
           <div className="text-center mb-4">
-            <Link href="/" className="inline-flex items-center gap-2 mb-2">
-              <TPLogo size={36} />
-              <span className="font-bold text-xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
+            <Link href="/" className="inline-flex mb-2">
+              <BrandLockup size={36} compact />
             </Link>
             <h1 className="text-xl font-bold text-gray-900">Create your account</h1>
             <p className="text-gray-500 text-sm mt-0.5">Start learning today — it&apos;s free!</p>
@@ -180,7 +179,7 @@ export default function RegisterPage() {
                 {errors.confirmPassword && <p className="mt-0.5 text-xs text-red-500">{errors.confirmPassword.message}</p>}
               </div>
 
-              <p className="text-xs text-gray-400">By signing up, you agree to our <Link href="#" className="text-amber-600 hover:underline">Terms</Link> and <Link href="#" className="text-amber-600 hover:underline">Privacy Policy</Link>.</p>
+              <p className="text-xs text-gray-400">By signing up, you agree to our <Link href="/terms" className="text-amber-600 hover:underline">Terms</Link> and <Link href="/privacy" className="text-amber-600 hover:underline">Privacy Policy</Link>.</p>
 
               <button type="submit" disabled={isLoading} className="w-full py-2.5 bg-gradient-to-r from-amber-600 to-yellow-700 text-white font-semibold rounded-xl hover:from-amber-700 hover:to-yellow-800 transition-all shadow-md shadow-amber-200 disabled:opacity-50 text-sm">
                 {isLoading ? "Creating account..." : "Create Account"}

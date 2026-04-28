@@ -33,10 +33,10 @@ export default async function InstructorDashboard() {
   ];
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-5 p-4 sm:p-6">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-white">Instructor Dashboard</h1>
+          <h1 className="text-xl font-bold text-white sm:text-2xl">Instructor Dashboard</h1>
           <p className="text-gray-400 text-sm mt-1">Welcome back, {session?.user?.name}</p>
         </div>
         <Link href="/instructor/courses/new"
@@ -48,12 +48,12 @@ export default async function InstructorDashboard() {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {stats.map(({ label, value, icon: Icon, color }) => (
-          <div key={label} className="rounded-2xl p-5 border border-white/8" style={{ background: "rgba(255,255,255,0.03)" }}>
+          <div key={label} className="rounded-2xl border border-white/8 p-4 sm:p-5" style={{ background: "rgba(255,255,255,0.03)" }}>
             <div className="flex items-center justify-between mb-3">
               <p className="text-gray-400 text-sm">{label}</p>
               <div className={`w-9 h-9 rounded-xl ${color} flex items-center justify-center`}><Icon className="w-4 h-4 text-white opacity-80" /></div>
             </div>
-            <p className="text-3xl font-bold text-white">{value}</p>
+            <p className="text-2xl font-bold text-white sm:text-3xl">{value}</p>
           </div>
         ))}
       </div>
@@ -66,7 +66,7 @@ export default async function InstructorDashboard() {
           </div>
           <div className="divide-y divide-white/5">
             {courses.slice(0, 5).map((c) => (
-              <div key={c.id} className="flex items-center gap-3 px-5 py-3">
+              <div key={c.id} className="flex flex-wrap items-center gap-3 px-4 py-3 sm:flex-nowrap sm:px-5">
                 <div className="w-12 h-8 rounded-lg overflow-hidden shrink-0 bg-gray-800">
                   {c.thumbnail ? <img src={c.thumbnail} className="w-full h-full object-cover" alt="" /> : <div className="w-full h-full bg-gradient-to-br from-amber-900 to-orange-900" />}
                 </div>
@@ -88,7 +88,7 @@ export default async function InstructorDashboard() {
           </div>
           <div className="divide-y divide-white/5">
             {recentEnrollments.map((e) => (
-              <div key={e.id} className="flex items-center gap-3 px-5 py-3">
+              <div key={e.id} className="flex items-center gap-3 px-4 py-3 sm:px-5">
                 {e.user.image ? <img src={e.user.image} className="w-7 h-7 rounded-full" alt="" /> : (
                   <div className="w-7 h-7 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-[10px] font-bold shrink-0">{e.user.name?.[0]}</div>
                 )}

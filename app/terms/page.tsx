@@ -153,7 +153,7 @@ export default function TermsPage() {
                 </h2>
                 <div className="space-y-3 text-gray-600 leading-relaxed text-sm">
                   <p>All prices are displayed in the applicable currency at checkout. Payment is due at the time of purchase. We use Stripe and Razorpay to process payments securely.</p>
-                  <p><strong>Refund Policy:</strong> You may request a full refund within 30 days of purchase if you are unsatisfied for any reason, provided you have not completed more than 30% of the course content. To request a refund, contact <a href="mailto:support@learnifypro.com" className="text-amber-600 underline underline-offset-2">support@learnifypro.com</a> with your order details. Refunds are processed within 5–7 business days to the original payment method.</p>
+                  <p><strong>Refund Policy:</strong> You may request a full refund within 30 days of purchase if you are unsatisfied for any reason, provided you have not completed more than 30% of the course content. To request a refund, contact <a href="mailto:support@techprowexa.com" className="text-amber-600 underline underline-offset-2">support@techprowexa.com</a> with your order details. Refunds are processed within 5–7 business days to the original payment method.</p>
                 </div>
               </div>
 
@@ -222,8 +222,8 @@ export default function TermsPage() {
                     <p className="font-semibold text-gray-800">TechProwexa — Legal Team</p>
                     <p>
                       Email:{" "}
-                      <a href="mailto:legal@learnifypro.com" className="text-amber-600 underline underline-offset-2">
-                        legal@learnifypro.com
+                      <a href="mailto:legal@techprowexa.com" className="text-amber-600 underline underline-offset-2">
+                        legal@techprowexa.com
                       </a>
                     </p>
                     <p>Address: Bengaluru, Karnataka, India</p>

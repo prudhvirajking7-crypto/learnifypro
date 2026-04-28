@@ -10,9 +10,11 @@ export default async function InstructorLayout({ children }: { children: React.R
   if (!session || !["INSTRUCTOR", "ADMIN"].includes(role)) redirect("/dashboard");
 
   return (
-    <div className="flex h-screen overflow-hidden" style={{ background: "#160f03" }}>
+    <div className="flex min-h-screen overflow-hidden" style={{ background: "#160f03" }}>
       <AdminSidebar role="INSTRUCTOR" user={session.user as any} />
-      <main className="flex-1 overflow-y-auto" style={{ background: "linear-gradient(160deg, #1a1205 0%, #160f03 50%, #1e1508 100%)" }}><PageTransition>{children}</PageTransition></main>
+      <main className="h-screen flex-1 overflow-y-auto pt-16 lg:pt-0" style={{ background: "linear-gradient(160deg, #1a1205 0%, #160f03 50%, #1e1508 100%)" }}>
+        <PageTransition>{children}</PageTransition>
+      </main>
     </div>
   );
 }

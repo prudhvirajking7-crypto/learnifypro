@@ -114,10 +114,10 @@ export default async function CareersPage() {
             We&apos;re always on the lookout for exceptional people. Send us your resume and tell us how you&apos;d contribute.
           </p>
           <a
-            href="mailto:careers@learnifypro.com"
+            href="mailto:careers@techprowexa.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-xl"
           >
-            careers@learnifypro.com
+            careers@techprowexa.com
           </a>
         </div>
       </section>

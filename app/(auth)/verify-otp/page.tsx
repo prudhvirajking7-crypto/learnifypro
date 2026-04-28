@@ -1,5 +1,5 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
+import BrandLockup from "@/components/ui/brand-lockup";
 import { useState, useRef, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -169,9 +169,8 @@ export default function VerifyOTPPage() {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <TPLogo size={40} />
-            <span className="font-bold text-2xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
+          <Link href="/" className="inline-flex mb-4">
+            <BrandLockup size={40} />
           </Link>
         </div>
 

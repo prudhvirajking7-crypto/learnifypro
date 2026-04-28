@@ -1,6 +1,6 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
-import { useState, useEffect, Suspense } from "react";
+import BrandLockup from "@/components/ui/brand-lockup";
+import { useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Lock, Eye, EyeOff, CheckCircle } from "lucide-react";
@@ -130,7 +130,7 @@ function ResetPasswordForm() {
       </button>
 
       <p className="text-center text-sm text-gray-500">
-        Didn't get the code?{" "}
+        Didn&apos;t get the code?{" "}
         <Link href="/forgot-password" className="text-amber-600 font-semibold hover:underline">Request again</Link>
       </p>
     </form>
@@ -142,9 +142,8 @@ export default function ResetPasswordPage() {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-6">
-              <TPLogo size={40} />
-            <span className="font-bold text-2xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
+          <Link href="/" className="inline-flex mb-6">
+            <BrandLockup size={40} />
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Set a new password</h1>
           <p className="text-gray-500 mt-1">Enter the code we sent you and choose a new password.</p>

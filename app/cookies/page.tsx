@@ -224,8 +224,8 @@ export default function CookiesPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-3">Questions?</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
               If you have questions about our use of cookies, please contact us at{" "}
-              <a href="mailto:privacy@learnifypro.com" className="text-amber-600 underline underline-offset-2 hover:text-amber-700">
-                privacy@learnifypro.com
+              <a href="mailto:privacy@techprowexa.com" className="text-amber-600 underline underline-offset-2 hover:text-amber-700">
+                privacy@techprowexa.com
               </a>{" "}
               or visit our{" "}
               <Link href="/privacy" className="text-amber-600 underline underline-offset-2 hover:text-amber-700">

@@ -1,5 +1,5 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
+import BrandLockup from "@/components/ui/brand-lockup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -78,9 +78,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-br from-amber-50 via-white to-yellow-50 overflow-hidden">
+    <div className="min-h-dvh flex flex-col bg-gradient-to-br from-amber-50 via-white to-yellow-50">
       {/* Top nav strip */}
-      <div className="flex items-center justify-between px-6 sm:px-10 py-3 shrink-0">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-10 shrink-0">
         <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-amber-600 transition-colors group">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
           Back to Home
@@ -92,13 +92,12 @@ export default function LoginPage() {
       </div>
 
       {/* Centered content */}
-      <div className="flex-1 flex items-center justify-center px-4">
+      <div className="flex-1 flex items-center justify-center px-4 py-6">
         <div className="w-full max-w-sm">
           {/* Logo */}
           <div className="text-center mb-5">
-            <Link href="/" className="inline-flex items-center gap-2 mb-3">
-              <TPLogo size={36} />
-              <span className="font-bold text-xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
+            <Link href="/" className="inline-flex mb-3">
+              <BrandLockup size={36} compact />
             </Link>
             <h1 className="text-xl font-bold text-gray-900">Welcome back!</h1>
             <p className="text-gray-500 text-sm mt-0.5">Sign in to continue learning</p>

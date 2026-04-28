@@ -5,66 +5,64 @@ interface TPLogoProps {
 }
 
 /**
- * TechProwexa logo mark — amber rounded square with bold TP letterforms
- * and a graduation cap sitting on top, matching the brand identity.
+ * TechProwexa monogram mark.
+ * Orange brand tile with compact white tp lettering for strong recognition
+ * at navbar, auth, and dashboard sizes.
  */
 export default function TPLogo({ size = 32, className = "", shadow = true }: TPLogoProps) {
-  const h = Math.round(size * 1.18);
-
   return (
     <div
       className={className}
       style={{
         width: size,
-        height: h,
+        height: size,
         flexShrink: 0,
         display: "inline-flex",
         filter: shadow
-          ? "drop-shadow(0 4px 8px rgba(180,83,9,0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.18))"
+          ? "drop-shadow(0 8px 16px rgba(217,119,6,0.32)) drop-shadow(0 2px 5px rgba(15,23,42,0.18))"
           : undefined,
       }}
     >
-      <svg width={size} height={h} viewBox="0 0 100 118" fill="none">
+      <svg width={size} height={size} viewBox="0 0 112 112" fill="none" aria-hidden="true">
         <defs>
-          <linearGradient
-            id="tplogo-bg"
-            x1="3" y1="28" x2="97" y2="115"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%"   stopColor="#fbbf24" />
-            <stop offset="40%"  stopColor="#f59e0b" />
-            <stop offset="75%"  stopColor="#d97706" />
-            <stop offset="100%" stopColor="#c2410c" />
+          <linearGradient id="tplogo-surface" x1="12" y1="10" x2="102" y2="104" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FB923C" />
+            <stop offset="42%" stopColor="#F97316" />
+            <stop offset="75%" stopColor="#D97706" />
+            <stop offset="100%" stopColor="#C2410C" />
           </linearGradient>
-          <radialGradient id="tplogo-hl" cx="38%" cy="28%" r="65%">
-            <stop offset="0%"   stopColor="white" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="white" stopOpacity="0"    />
+          <linearGradient id="tplogo-stroke" x1="16" y1="16" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="rgba(255,255,255,0.85)" />
+            <stop offset="100%" stopColor="rgba(255,255,255,0.15)" />
+          </linearGradient>
+          <radialGradient id="tplogo-glow" cx="34%" cy="18%" r="72%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.42" />
+            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
           </radialGradient>
+          <linearGradient id="tplogo-core" x1="30" y1="28" x2="86" y2="84" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="100%" stopColor="#FFF7ED" />
+          </linearGradient>
         </defs>
 
-        {/* ── Main rounded badge ── */}
-        <rect x="3" y="28" width="94" height="87" rx="20" fill="url(#tplogo-bg)" />
-        <rect x="3" y="28" width="94" height="87" rx="20" fill="url(#tplogo-hl)" />
+        <rect x="8" y="8" width="96" height="96" rx="28" fill="#0F172A" opacity="0.08" />
+        <rect x="8" y="6" width="96" height="96" rx="28" fill="url(#tplogo-surface)" />
+        <rect x="8.75" y="6.75" width="94.5" height="94.5" rx="27.25" stroke="url(#tplogo-stroke)" strokeOpacity="0.45" strokeWidth="1.5" />
+        <rect x="16" y="14" width="80" height="80" rx="22" fill="url(#tplogo-glow)" />
 
-        {/* ── Graduation cap body (cylinder) ── */}
-        <path d="M 30 21 L 70 21 L 70 34 Q 70 41 50 41 Q 30 41 30 34 Z" fill="#d97706" />
-        <ellipse cx="50" cy="21" rx="20" ry="5.5" fill="#e88515" />
-
-        {/* ── Mortarboard (diamond board) ── */}
-        <polygon points="50,3 88,19 50,29 12,19" fill="#f97316" />
-        <polygon points="50,3 88,19 62,14 26,14" fill="rgba(255,240,100,0.22)" />
-
-        {/* ── Tassel ── */}
-        <line x1="88" y1="19" x2="88" y2="36" stroke="#b45309" strokeWidth="3" strokeLinecap="round" />
-        <rect x="84" y="35" width="9" height="11" rx="3.5" fill="#b45309" />
-
-        {/* ── T ── */}
-        <rect x="13" y="52" width="38" height="12" rx="6" fill="white" />
-        <rect x="26" y="52" width="12" height="54" rx="6" fill="white" />
-
-        {/* ── P ── */}
-        <rect x="60" y="52" width="12" height="54" rx="6" fill="white" />
-        <path d="M 72 52 A 13 13 0 0 1 72 78 Z" fill="white" />
+        <text
+          x="56"
+          y="68"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fill="url(#tplogo-core)"
+          fontFamily="Arial, Helvetica, sans-serif"
+          fontSize="46"
+          fontWeight="900"
+          letterSpacing="-4"
+        >
+          tp
+        </text>
       </svg>
     </div>
   );

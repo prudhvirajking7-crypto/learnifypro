@@ -189,8 +189,8 @@ export default function PrivacyPage() {
                   </ul>
                   <p>
                     To exercise any of these rights, email us at{" "}
-                    <a href="mailto:privacy@learnifypro.com" className="text-amber-600 underline underline-offset-2">
-                      privacy@learnifypro.com
+                    <a href="mailto:privacy@techprowexa.com" className="text-amber-600 underline underline-offset-2">
+                      privacy@techprowexa.com
                     </a>
                     . We will respond within 30 days.
                   </p>
@@ -235,8 +235,8 @@ export default function PrivacyPage() {
                     <p className="font-semibold text-gray-800">TechProwexa — Privacy Team</p>
                     <p>
                       Email:{" "}
-                      <a href="mailto:privacy@learnifypro.com" className="text-amber-600 underline underline-offset-2">
-                        privacy@learnifypro.com
+                      <a href="mailto:privacy@techprowexa.com" className="text-amber-600 underline underline-offset-2">
+                        privacy@techprowexa.com
                       </a>
                     </p>
                     <p>Address: Bengaluru, Karnataka, India</p>

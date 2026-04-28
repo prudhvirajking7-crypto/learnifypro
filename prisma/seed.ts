@@ -53,11 +53,11 @@ async function main() {
   // Admin user
   const adminPassword = await bcrypt.hash("Admin@123", 12);
   const admin = await prisma.user.upsert({
-    where: { email: "admin@learnifypro.com" },
+    where: { email: "admin@techprowexa.com" },
     update: {},
     create: {
       name: "TechProwexa Admin",
-      email: "admin@learnifypro.com",
+      email: "admin@techprowexa.com",
       password: adminPassword,
       role: "ADMIN",
       emailVerified: new Date(),
@@ -67,11 +67,11 @@ async function main() {
   // Instructor users
   const instructorPassword = await bcrypt.hash("Instructor@123", 12);
   const instructor1 = await prisma.user.upsert({
-    where: { email: "john.smith@learnifypro.com" },
+    where: { email: "john.smith@techprowexa.com" },
     update: {},
     create: {
       name: "John Smith",
-      email: "john.smith@learnifypro.com",
+      email: "john.smith@techprowexa.com",
       password: instructorPassword,
       role: "INSTRUCTOR",
       emailVerified: new Date(),
@@ -80,11 +80,11 @@ async function main() {
   });
 
   const instructor2 = await prisma.user.upsert({
-    where: { email: "priya.kapoor@learnifypro.com" },
+    where: { email: "priya.kapoor@techprowexa.com" },
     update: {},
     create: {
       name: "Priya Kapoor",
-      email: "priya.kapoor@learnifypro.com",
+      email: "priya.kapoor@techprowexa.com",
       password: instructorPassword,
       role: "INSTRUCTOR",
       emailVerified: new Date(),
@@ -93,11 +93,11 @@ async function main() {
   });
 
   const instructor3 = await prisma.user.upsert({
-    where: { email: "arjun.mehta@learnifypro.com" },
+    where: { email: "arjun.mehta@techprowexa.com" },
     update: {},
     create: {
       name: "Arjun Mehta",
-      email: "arjun.mehta@learnifypro.com",
+      email: "arjun.mehta@techprowexa.com",
       password: instructorPassword,
       role: "INSTRUCTOR",
       emailVerified: new Date(),
@@ -344,8 +344,8 @@ async function main() {
 
   console.log("✅ Seeding completed!");
   console.log("\n📋 Default credentials:");
-  console.log("Admin:      admin@learnifypro.com / Admin@123");
-  console.log("Instructor: john.smith@learnifypro.com / Instructor@123");
+  console.log("Admin:      admin@techprowexa.com / Admin@123");
+  console.log("Instructor: john.smith@techprowexa.com / Instructor@123");
 }
 
 main()

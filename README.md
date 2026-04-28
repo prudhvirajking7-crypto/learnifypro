@@ -37,8 +37,8 @@ A production-grade Udemy-like e-learning platform built with Next.js 14, Postgre
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/prudhvirajking7/learnifypro.git
-cd learnifypro
+git clone https://github.com/prudhvirajking7/techprowexa.git
+cd techprowexa
 npm install
 ```
 
@@ -60,11 +60,13 @@ NEXTAUTH_SECRET=<generate: openssl rand -base64 32>
 GOOGLE_CLIENT_ID=your-google-client-id
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your@email.com
-SMTP_PASS=your-app-password
-SMTP_FROM=TechProwexa <your@email.com>
+SMTP_HOST=smtp.hostinger.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=exploretech@techprowexa.com
+SMTP_PASS=your-hostinger-email-password
+SMTP_FROM=TechProwexa <exploretech@techprowexa.com>
+CAREERS_EMAIL=exploretech@techprowexa.com
 
 STRIPE_SECRET_KEY=sk_test_...
 NEXT_PUBLIC_STRIPE_KEY=pk_test_...
@@ -96,8 +98,8 @@ Open [http://localhost:3000](http://localhost:3000)
 
 | Role | Email | Password |
 |---|---|---|
-| Admin | admin@learnifypro.com | Admin@123 |
-| Instructor | john.smith@learnifypro.com | Instructor@123 |
+| Admin | admin@techprowexa.com | Admin@123 |
+| Instructor | john.smith@techprowexa.com | Instructor@123 |
 
 > **Change these immediately after first login in production!**
 

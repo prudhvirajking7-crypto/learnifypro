@@ -1,9 +1,9 @@
 "use client";
-import TPLogo from "@/components/ui/tp-logo";
+import BrandLockup from "@/components/ui/brand-lockup";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Mail, ArrowLeft, AlertCircle, CheckCircle } from "lucide-react";
+import { Mail, ArrowLeft, CheckCircle } from "lucide-react";
 import toast from "react-hot-toast";
 
 export default function ForgotPasswordPage() {
@@ -45,12 +45,11 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-6">
-              <TPLogo size={40} />
-            <span className="font-bold text-2xl text-gray-900">TechPro<span className="text-amber-600">wexa</span></span>
+          <Link href="/" className="inline-flex mb-6">
+            <BrandLockup size={40} />
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Forgot your password?</h1>
-          <p className="text-gray-500 mt-1">Enter your email and we'll send you a reset code.</p>
+          <p className="text-gray-500 mt-1">Enter your email and we&apos;ll send you a reset code.</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">

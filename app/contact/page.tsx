@@ -203,10 +203,10 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">Email Us</h3>
                     <p className="text-gray-500 text-sm mb-2">Drop us a line any time.</p>
                     <a
-                      href="mailto:support@learnifypro.com"
+                      href="mailto:support@techprowexa.com"
                       className="text-amber-600 font-semibold text-sm hover:text-amber-700 transition-colors"
                     >
-                      support@learnifypro.com
+                      support@techprowexa.com
                     </a>
                   </div>
                 </div>

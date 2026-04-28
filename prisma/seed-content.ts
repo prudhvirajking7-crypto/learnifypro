@@ -77,7 +77,7 @@ const FREE_COURSES = [
     ],
     tags: ["html", "css", "web development", "beginner", "free"],
     categorySlug: "web-development",
-    instructorEmail: "john.smith@learnifypro.com",
+    instructorEmail: "john.smith@techprowexa.com",
     sections: [
       {
         title: "Getting Started with HTML",
@@ -189,7 +189,7 @@ const FREE_COURSES = [
     ],
     tags: ["python", "programming", "beginner", "free", "oop"],
     categorySlug: "data-science",
-    instructorEmail: "priya.kapoor@learnifypro.com",
+    instructorEmail: "priya.kapoor@techprowexa.com",
     sections: [
       {
         title: "Python Basics",
@@ -288,7 +288,7 @@ const FREE_COURSES = [
     ],
     tags: ["git", "github", "version control", "beginner", "free"],
     categorySlug: "it-software",
-    instructorEmail: "john.smith@learnifypro.com",
+    instructorEmail: "john.smith@techprowexa.com",
     sections: [
       {
         title: "Git Fundamentals",
@@ -384,7 +384,7 @@ const FREE_COURSES = [
     ],
     tags: ["javascript", "es6", "dom", "async", "beginner", "free"],
     categorySlug: "web-development",
-    instructorEmail: "john.smith@learnifypro.com",
+    instructorEmail: "john.smith@techprowexa.com",
     sections: [
       {
         title: "JavaScript Basics",
